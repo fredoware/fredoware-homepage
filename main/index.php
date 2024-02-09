@@ -26,7 +26,7 @@
 </section>
 
 <section id="websites">
-ASDASDHAKJSHDJAKSHDJASDHKJ
+  
 </section>
 
 <section id="apps">
