@@ -1,6 +1,3 @@
 <?php
-
-$x = 'Hello World';
-
+  header("Location: app/");
 ?>
-<?=$x?>
