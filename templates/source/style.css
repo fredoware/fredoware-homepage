@@ -6,6 +6,8 @@
     --dark: #001D23;
 }
 
+
+/* =================================================================================================================== */
 /* Mobile */
 @media (max-width: 600px) {
   #main-logo{
@@ -20,6 +22,17 @@
   }
 }
 
+.primary-color {
+    color: var(--primary);
+}
+
+
+.text-left{
+  text-align: left !important;
+}
+
+
+/* =================================================================================================================== */
 .back-to-top {
     position: fixed;
     display: none;
@@ -28,6 +41,9 @@
     z-index: 99;
 }
 
+.section-dark{
+  background: #f5f4f2;
+}
 
 /*** Spinner ***/
 #spinner {
