@@ -20,6 +20,10 @@
   }
 }
 
+.primary-color {
+    color: var(--primary);
+}
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -28,6 +32,9 @@
     z-index: 99;
 }
 
+.section-dark{
+  background: #f5f4f2;
+}
 
 /*** Spinner ***/
 #spinner {
