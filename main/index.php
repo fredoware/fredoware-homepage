@@ -2,92 +2,104 @@
   $ROOT_DIR="../";
   include $ROOT_DIR . "templates/header.php";
 
-
 ?>
 
-
-<section id="home">
-  <div id="carouselExampleCaptions" class="carousel slide">
-
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-
-        <img src="../templates/img/test.jpg" class=" w-100 center-cropped">
-
-        <div class="carousel-caption d-md-block">
-          <h5>We Make Ideas Happen</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-          <button type="button" name="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Start a project</button>
+<!-- Carousel Start -->
+<section class="container-fluid p-0 mb-5" id="home">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="<?=$ROOT_DIR;?>templates/img/carousel-2.jpg" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7 pt-5">
+                                <h1 class="display-4 text-white mb-3 animated slideInDown">We Find Ways. We got it all for you.</h1>
+                                <p class="fs-5 text-white-50 mb-5 animated slideInDown">Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
+                                <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
+                                    Learn More
+                                    <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="w-100" src="<?=$ROOT_DIR;?>templates/img/carousel-2.jpg" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7 pt-5">
+                                <h1 class="display-4 text-white mb-3 animated slideInDown">There's no other place, there's no other place</h1>
+                                <p class="fs-5 text-white-50 mb-5 animated slideInDown">Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
+                                <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
+                                    Learn More
+                                    <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-
-  </div>
 </section>
+<!-- Carousel End -->
 
-<section id="websites">
-  
-</section>
 
-<section id="apps">
 
-</section>
-
-<section id="aboutus">
+<!-- About us Start -->
+<section class="container-fluid p-0 mb-5" id="aboutus">
 
 </section>
+<!-- About us End -->
 
-<section id="contact">
+
+
+
+<!-- Services Start -->
+<section class="container-fluid p-0 mb-5" id="services">
 
 </section>
-<!-- Button trigger modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Inquire Now</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="process.php?action=inquiry-add" method="post">
-  <div class="row">
-    <div class="col-6">
-        <input type="text" name="firstName" placeholder="Firstname*" class="form-control">
-    </div>
-    <div class="col-6">
-        <input type="text" name="lastName" placeholder="Lastname*" class="form-control">
-    </div>
-    <div class="col-12 mt-2">
-        <input type="text" name="company" placeholder="Company(optional)*" class="form-control">
-    </div>
-    <div class="col-6 mt-2">
-        <input type="text" name="email" placeholder="Email Address*" class="form-control">
-    </div>
-    <div class="col-6 mt-2">
-      <input type="text" name="phone" placeholder="Contact Number*" class="form-control">
-    </div>
-
-    <div class="col-12 mt-5">
-      <select class="form-control" name="type" required>
-      <option value="">--Select--</option>
-      <option>Website</option>
-      <option>Apps</option>
-      </select>
-    </div>
-    <div class="col-12 mt-2">
-      <textarea  class="form-control" type="text" name="message" placeholder="Message*" required>
-      </textarea>
-      <br>
-      <button type="submit" name="button" class="btn btn-primary">SUBMIT</button>
-
-    </div>
-          </form>
+<!-- Services End -->
 
 
-      </div>
-    </div>
-  </div>
-</div>
+
+<!-- Website Start -->
+<section class="container-fluid p-0 mb-5" id="websites">
+
+</section>
+<!-- Website End -->
+
+
+<!-- App Start -->
+<section class="container-fluid p-0 mb-5" id="apps">
+
+</section>
+<!-- App End -->
+
+
+
+<!-- Contact us Start -->
+<section class="container-fluid p-0 mb-5" id="contactus">
+
+</section>
+<!-- Contact us End -->
+
+
 <?php include $ROOT_DIR . "templates/footer.php"; ?>
