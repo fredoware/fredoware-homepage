@@ -12,11 +12,11 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
 
-        <img src="../templates/img/test.jpg" class=" w-100 center-cropped">
+        <img src="../templates/img/hometest.jpg" class=" w-100 center-cropped">
 
         <div class="carousel-caption d-md-block">
-          <h5>We Make Ideas Happen</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+          <h3>Your Ideas into Reality</h3>
+          <p>Crafting Digital Excellence, Empowering Your Web and App Dreams</p>
           <button type="button" name="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Start a project</button>
         </div>
       </div>
@@ -26,7 +26,7 @@
 </section>
 
 <section id="websites">
-  
+
 </section>
 
 <section id="apps">

@@ -3,3 +3,6 @@
   height: 600px;
 
 }
+.carousel-caption {
+    bottom: 170px !important;
+}
