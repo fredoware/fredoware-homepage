@@ -97,14 +97,16 @@
               <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                   <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
                       <h4 class="mb-3">Web Development Services</h4>
-                      Custom Website Development <br>
-                      Custom Website Development <br>
-                      Custom Website Development <br>
-                      Custom Website Development <br>
-                      Custom Website Development <br>
-                      Custom Website Development <br>
-                      Custom Website Development <br>
-
+                        <div class="text-left">
+                      -Custom Website Development <br>
+                      -Frontend Development (HTML/CSS/Javascript) <br>
+                      -Backend Development (PHP, Python, Node.js, etc.)<br>
+                      -Content Management System (CMS) Development (WordPress, Drupal, Joomla, etc.)<br>
+                      -E-commerce Website Development <br>
+                      -Web Application Development<br>
+                      -Responsive Web Design <br>
+                      -Website Maintenance and Support <br>
+                    </div>
                       <a class="btn btn-outline-primary mt-3 px-3" href="">
                           Learn More
                           <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
@@ -118,15 +120,17 @@
 
                   <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                       <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                          <h4 class="mb-3">Web Development Services</h4>
-                          Custom Website Development <br>
-                          Custom Website Development <br>
-                          Custom Website Development <br>
-                          Custom Website Development <br>
-                          Custom Website Development <br>
-                          Custom Website Development <br>
-                          Custom Website Development <br>
-
+                          <h4 class="mb-3">Mobile App Development Services</h4>
+                          <div class="text-left">
+                          -iOS App Development (iPhone/iPad) <br>
+                          -Android App Development <br>
+                          -Cross-platform App Development (React Native, Flutter, Xamarin)<br>
+                          -Native App Development <br>
+                          -Mobile UI/UX Design <br>
+                          -App Prototyping and Wireframing <br>
+                          -App Testing and Quality Assurance <br>
+                          -App Deployment and Maintenance <br>
+                        </div>
                           <a class="btn btn-outline-primary mt-3 px-3" href="">
                               Learn More
                               <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
@@ -140,15 +144,17 @@
 
                       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                           <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                              <h4 class="mb-3">Web Development Services</h4>
-                              Custom Website Development <br>
-                              Custom Website Development <br>
-                              Custom Website Development <br>
-                              Custom Website Development <br>
-                              Custom Website Development <br>
-                              Custom Website Development <br>
-                              Custom Website Development <br>
-
+                              <h4 class="mb-3">Additional Services</h4>
+                              <div class="text-left">
+                              -UI/UX Design Services <br>
+                              -Progressive Web App (PWA) Development <br>
+                              -API Development and Integration <br>
+                              -Database Design and Development <br>
+                              -Cloud Integration and Hosting Services <br>
+                              -Enterprise Software Development <br>
+                              -Augmented Reality (AR) and Virtual Reality (VR) App Development <br>
+                              -IoT (Internet of Things) App Development <br>
+                            </div>
                               <a class="btn btn-outline-primary mt-3 px-3" href="">
                                   Learn More
                                   <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
@@ -162,15 +168,13 @@
 
                           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                               <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                                  <h4 class="mb-3">Web Development Services</h4>
-                                  Custom Website Development <br>
-                                  Custom Website Development <br>
-                                  Custom Website Development <br>
-                                  Custom Website Development <br>
-                                  Custom Website Development <br>
-                                  Custom Website Development <br>
-                                  Custom Website Development <br>
-
+                                  <h4 class="mb-3">Consulting and Strategy</h4>
+                                    <div class="text-left">
+                                  -Technology Consulting <br>
+                                  -Digital Transformation Strategy <br>
+                                  -Product Roadmapping and Planning <br>
+                                  -IT Project Management <br>
+                                </div>
                                   <a class="btn btn-outline-primary mt-3 px-3" href="">
                                       Learn More
                                       <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
@@ -184,15 +188,14 @@
 
                               <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                   <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                                      <h4 class="mb-3">Web Development Services</h4>
-                                      Custom Website Development <br>
-                                      Custom Website Development <br>
-                                      Custom Website Development <br>
-                                      Custom Website Development <br>
-                                      Custom Website Development <br>
-                                      Custom Website Development <br>
-                                      Custom Website Development <br>
+                                      <h4 class="mb-3">Support and Maintenance:</h4>
+                                      <div class="text-left">
 
+                                      -Ongoing Support and Maintenance Services <br>
+                                      -Performance Monitoring and Optimization <br>
+                                      -Security Audits and Enhancements <br>
+                                      -Upgrades and Updates<br>
+                                      </div>
                                       <a class="btn btn-outline-primary mt-3 px-3" href="">
                                           Learn More
                                           <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
@@ -226,7 +229,7 @@
                           <div class="col-lg-6 pt-5" style="text-align:left">
                               <p class="fs-2 text-white-50 mb-2 animated slideInDown">Website Development</p>
                               <h1 class="display-4 text-white mb-3 animated slideInDown">Websites.</h1>
-                              <p class="fs-5 text-white-50 mb-5 animated slideInDown">Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
+                              <p class="fs-5 text-white-50 mb-5 animated slideInDown">Bringing Your Online Ideas to Life, with Expertise and Precision in Every Line of Code.</p>
                               <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
                                   Start a project
                                   <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
@@ -256,7 +259,7 @@
                           <div class="col-lg-12 pt-5" style="text-align:right">
                               <p class="fs-2 text-white-50 mb-2 animated slideInDown">Mobile App Development</p>
                               <h1 class="display-4 text-white mb-3 animated slideInDown">Apps.</h1>
-                              <p class="fs-5 text-white-50 mb-5 animated slideInDown">Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
+                              <p class="fs-5 text-white-50 mb-5 animated slideInDown">Empowering Your Mobile Vision with Expert Development and Seamless User Experiences.</p>
                               <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
                                   Start a project
                                   <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
