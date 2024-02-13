@@ -9,7 +9,7 @@ class Database
 
 
     private static $dbName = 'u437487943_fredowaredb' ;
-    private static $dbHost = 'fredoware.com' ;
+    private static $dbHost = 'localhost' ;
     private static $dbUsername = 'u437487943_fredowaresql';
     private static $dbUserPassword = 'feZxmasqw1212!@!@';
     private static $port = '';
