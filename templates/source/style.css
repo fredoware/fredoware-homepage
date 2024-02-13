@@ -4,6 +4,8 @@
     --secondary: #FFF0E6;
     --light: #F8F8F9;
     --dark: #001D23;
+
+    --gradient-firy: linear-gradient(to right, red , yellow);
 }
 
 
@@ -29,6 +31,19 @@
 
 .text-left{
   text-align: left !important;
+}
+
+.custom-store-carousel {
+    background: var(--gradient-firy) !important;
+}
+
+.custom-store-header {
+    background: #ff5500 !important;
+
+}
+
+.custom-store-collapsible{
+    background: #ff5500 !important;
 }
 
 

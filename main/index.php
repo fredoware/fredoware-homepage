@@ -218,6 +218,37 @@
 
 
 <!-- Website Start -->
+<section class="container-fluid p-0 mb-5" id="restaurant">
+  <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img class="w-100" src="<?=$ROOT_DIR;?>templates/img/web.jpg" alt="Image">
+              <div class="carousel-caption">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-8 pt-5" style="text-align:left">
+                              <p class="fs-2 text-white-50 mb-2 animated slideInDown">MenuWare Restaurant Menu</p>
+                              <h1 class="display-4 text-white mb-3 animated slideInDown">Scan QR code to view the menu in any language!</h1>
+                              <p class="fs-5 text-white-50 mb-5 animated slideInDown">Say goodbye to outdated and PDF menus. Upgrade to the world's first multilingual QR digital menu. Generate unlimited QR codes. Exhibit the specific price associated with different seating options. Showcase your best-selling product and special offers/combos at the top of the menu.</p>
+                              <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
+                                  Get Started
+                                  <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                                      <i class="fa fa-arrow-right"></i>
+                                  </div>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Website End -->
+
+
+
+<!-- Website Start -->
 <section class="container-fluid p-0 mb-5" id="websites">
   <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -231,7 +262,7 @@
                               <h1 class="display-4 text-white mb-3 animated slideInDown">Websites.</h1>
                               <p class="fs-5 text-white-50 mb-5 animated slideInDown">Bringing Your Online Ideas to Life, with Expertise and Precision in Every Line of Code.</p>
                               <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
-                                  Start a project
+                                  View projects
                                   <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                       <i class="fa fa-arrow-right"></i>
                                   </div>
@@ -261,7 +292,7 @@
                               <h1 class="display-4 text-white mb-3 animated slideInDown">Apps.</h1>
                               <p class="fs-5 text-white-50 mb-5 animated slideInDown">Empowering Your Mobile Vision with Expert Development and Seamless User Experiences.</p>
                               <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
-                                  Start a project
+                                  View projects
                                   <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                       <i class="fa fa-arrow-right"></i>
                                   </div>

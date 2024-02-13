@@ -6,7 +6,7 @@ function get_query_string($keyword, $default){
 }
 
 function format_money($value){
-	return number_format($value, 2, '.', ',');
+	return "₱" . number_format($value, 2, '.', ',');
 }
 
 function char_limit($x, $length){

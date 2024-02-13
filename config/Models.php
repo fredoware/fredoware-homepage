@@ -12,4 +12,22 @@ function inquiry() {
 	return $crud;
 }
 
+function store() {
+	$crud = new CRUD;
+	$crud->table = "store";
+	return $crud;
+}
+
+function menu_category() {
+	$crud = new CRUD;
+	$crud->table = "menu_category";
+	return $crud;
+}
+
+function menu_item() {
+	$crud = new CRUD;
+	$crud->table = "menu_item";
+	return $crud;
+}
+
 ?>
