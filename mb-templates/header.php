@@ -3,7 +3,7 @@ session_start();
 include_once($ROOT_DIR . "config/database.php");
 include_once($ROOT_DIR . "config/Models.php");
 
-$storeName = $_GET["name"];
+$storeName = $_SESSION["store"];
 $store = store()->get("name='$storeName'");
 ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ $store = store()->get("name='$storeName'");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Yummy Bootstrap Template - Index</title>
+  <title>Menu Book</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -35,6 +35,7 @@ $store = store()->get("name='$storeName'");
 
   <!-- Template Main CSS File -->
   <link href="<?=$ROOT_DIR;?>mb-templates/source/main.css" rel="stylesheet">
+  <link href="<?=$ROOT_DIR;?>mb-templates/custom.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Yummy
@@ -59,34 +60,13 @@ $store = store()->get("name='$storeName'");
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#chefs">Chefs</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.php#hero">Home</a></li>
+          <li><a href="index.php#menu">Menu</a></li>
+          <li><a href="my-cart.php">My Cart</a></li>
+          <li><a href="my-order.php">My Order</a></li>
         </ul>
       </nav><!-- .navbar -->
 
-      <a class="btn-book-a-table" href="#book-a-table">Book a Table</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 

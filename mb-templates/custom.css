@@ -1,0 +1,11 @@
+.bottom-sheet-dialog{
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+.bottom-sheet-dialog .card{
+  background: red;
+  color: white;
+  margin: 10px;
+}

@@ -1,3 +1,11 @@
+<script type="text/javascript">
+	function format_money(n){
+		n = parseFloat(n).toFixed(2)
+		return "₱" + Number(n).toLocaleString('en');
+	}
+</script>
+
+
 <?php
 $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 $success = (isset($_GET['success']) && $_GET['success'] != '') ? $_GET['success'] : '';
