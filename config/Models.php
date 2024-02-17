@@ -18,15 +18,27 @@ function store() {
 	return $crud;
 }
 
-function menu_category() {
+function menuCategory() {
 	$crud = new CRUD;
 	$crud->table = "menu_category";
 	return $crud;
 }
 
-function menu_item() {
+function menuItem() {
 	$crud = new CRUD;
 	$crud->table = "menu_item";
+	return $crud;
+}
+
+function orderMain() {
+	$crud = new CRUD;
+	$crud->table = "order_main";
+	return $crud;
+}
+
+function orderItem() {
+	$crud = new CRUD;
+	$crud->table = "order_item";
 	return $crud;
 }
 

@@ -7,7 +7,7 @@
   $totalAmount = 0;
 
   foreach ($cart as $key => $qty){
-    $item = menu_item()->get("Id=$key");
+    $item = menuItem()->get("Id=$key");
     $totalAmount += $item->price*$qty;
 
   }
@@ -27,12 +27,11 @@
 
         <?php
          foreach ($cart as $key => $qty):
-          $item = menu_item()->get("Id=$key");
+          $item = menuItem()->get("Id=$key");
           $total = $item->price*$qty;
 
            ?>
       <div class="col-lg-4 menu-item mb-3" id="cartItem<?=$item->Id;?>">
-
         <div class="card">
           <div class="card-body">
             <div class="row">
@@ -76,7 +75,7 @@
 </main>
 
 
-<div class="content-fluid bottom-sheet-dialog" onclick="location.href=''">
+<div class="content-fluid bottom-sheet-dialog"  data-bs-toggle="modal" data-bs-target="#orderModal">
   <div class="card">
     <div class="card-body">
       <div class="row">
@@ -87,6 +86,29 @@
           0
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Order Detail</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="process.php?action=place-order" method="post">
+        <div class="modal-body">
+          <b>Customer</b>
+          <input type="text" name="customer"  class="form-control" value="<?=$_SESSION["customer"]?>" required>
+          <b>Notes to kitchen</b>
+          <textarea name="notes" class="form-control"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+      </form>
     </div>
   </div>
 </div>

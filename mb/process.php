@@ -7,16 +7,16 @@ $action = $_GET['action'];
 
 switch ($action) {
 
-		case 'store-check-in' :
-			store_check_in();
-			break;
-
 		case 'add-to-cart' :
 			add_to_cart();
 			break;
 
 		case 'update-cart' :
 			update_cart();
+			break;
+
+		case 'place-order' :
+			place_order();
 			break;
 
 		case 'remove-from-cart' :
@@ -26,13 +26,34 @@ switch ($action) {
 	default :
 }
 
-function store_check_in()
-{
-	$_SESSION["store"] = $_GET["store"];
-	$_SESSION["cart"] = array();
-	$_SESSION["customer"] = "";
+function place_order(){
+	$cart = $_SESSION["cart"];
+	$orderNumber = round(microtime(true));
 
-header('Location: index.php');
+	$_SESSION["myOrders"][] = $orderNumber;
+
+	$model = orderMain();
+	$model->obj["customer"] = $_POST["customer"];
+	$model->obj["notes"] = $_POST["notes"];
+	$model->obj["orderNumber"] = $orderNumber;
+	$model->obj["date"] = "NOW()";
+	$model->obj["storeCode"] = $_SESSION["store"];
+	$model->create();
+
+
+	foreach ($cart as $key => $value) {
+		$model = orderItem();
+		$model->obj["orderNumber"] = $orderNumber;
+		$model->obj["itemId"] = $key;
+		$model->obj["quantity"] = $value;
+		$model->obj["dateAdded"] = "NOW()";
+		$model->create();
+	}
+
+	$_SESSION["cart"] = array();
+	$_SESSION["customer"] = $_POST["customer"];
+
+	header('Location: my-order.php');
 }
 
 function add_to_cart()

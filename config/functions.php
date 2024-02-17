@@ -33,7 +33,6 @@ function char_limit($x, $length){
 }
 
 
-
 /* =====================================Functions===================================== */
 function send_message($number,$message){
 		$ch = curl_init();
