@@ -2,15 +2,7 @@
 session_start();
 include_once($ROOT_DIR . "config/database.php");
 include_once($ROOT_DIR . "config/Models.php");
-
-if (isset($_SESSION["store"])) {
-
-  $storeName = $_SESSION["store"];
-  $store = store()->get("name='$storeName'");
-}
-else{
-  header("Location: qr-expired.php");
-}
+;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,37 +45,3 @@ else{
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <a href="index.php" class="logo d-flex align-items-center me-auto me-lg-0">
-        <img src="../media/<?=$store->logo?>">
-        <h1><?=$store->name?></h1>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <?php if (!isset($isStaff)): ?>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="menu.php">Menu</a></li>
-            <li><a href="my-cart.php">My Cart</a></li>
-            <li><a href="my-order.php">My Order</a></li>
-            <li><a href="store-qr.php">Store QR Code</a></li>
-          <?php else: ?>
-            <li><a href="kitchen-orders.php?status=Pending">Pending Orders</a></li>
-            <li><a href="kitchen-orders.php?status=Confirmed">Confirmed Orders</a></li>
-            <li><a href="kitchen-orders.php?status=Delivered">Delivered Orders</a></li>
-            <li><a href="kitchen-orders.php?status=Canceled">Canceled Orders</a></li>
-            <li><a href="kitchen-inventory.php">Item lists</a></li>
-            <li><a href="store-qr.php">Store QR Code</a></li>
-          <?php endif; ?>
-        </ul>
-      </nav><!-- .navbar -->
-
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-
-    </div>
-  </header><!-- End Header -->

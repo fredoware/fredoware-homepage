@@ -44,7 +44,7 @@
        <div class="card-body">
          <div class="row text-center">
            <div class="col">
-             Order # <p><?=$item->orderNumber?></p>
+             Customer: <?=$item->customer?> <br><?=$item->orderNumber?>
            </div>
            <div class="col">
              Total: <p><?=$totalAmount?></p>
