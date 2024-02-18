@@ -23,7 +23,33 @@ switch ($action) {
 			remove_from_cart();
 			break;
 
+		case 'change-order-status' :
+			change_order_status();
+			break;
+
+		case 'change-item-status' :
+			change_item_status();
+			break;
+
 	default :
+}
+
+function change_order_status(){
+	$Id = $_GET["Id"];
+
+	$model = orderMain();
+	$model->obj["status"] = $_GET["status"];
+	$model->update("Id=$Id");
+
+}
+
+function change_item_status(){
+	$Id = $_GET["Id"];
+
+	$model = menuItem();
+	$model->obj["status"] = $_GET["status"];
+	$model->update("Id=$Id");
+
 }
 
 function place_order(){

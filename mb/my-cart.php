@@ -35,9 +35,11 @@
         <div class="card">
           <div class="card-body">
             <div class="row">
+              <?php if ($item->image): ?>
               <div class="col">
-               <img src="../media/<?=$item->image;?>" width="100%" alt="">
+                  <img src="../media/<?=$item->image;?>" width="100%" alt="">
               </div>
+            <?php endif; ?>
               <div class="col">
                 <h4><?=$item->name;?></h4>
                 <p class="ingredients">

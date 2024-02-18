@@ -53,7 +53,8 @@
                   <?php
                     $count = 0;
                    foreach ($category_list as $row):
-                     $item_list = menuItem()->list("menuCategoryId=$row->Id");
+                     $available_items = menuItem()->list("menuCategoryId=$row->Id and status='Available'");
+                     $unavailable_items = menuItem()->list("menuCategoryId=$row->Id and status='Not Available'");
                      $count += 1;
                      if ($count==1) {
                        $activeStatus = "active show";
@@ -72,7 +73,8 @@
 
                            <div class="row gy-5">
 
-                            <?php foreach ($item_list as $item):
+                            <?php foreach ($available_items as $item):
+
 
                                ?>
                                <div class="col-lg-4 menu-item" style="margin-bottom:-30px" data-bs-toggle="modal" data-bs-target="#itemModal<?=$item->Id?>">
@@ -80,9 +82,11 @@
                                  <div class="card">
                                    <div class="card-body">
                                      <div class="row">
+                                       <?php if ($item->image): ?>
                                        <div class="col">
-                                        <img src="../media/<?=$item->image;?>" width="100%" alt="">
+                                           <img src="../media/<?=$item->image;?>" width="100%" alt="">
                                        </div>
+                                     <?php endif; ?>
                                        <div class="col">
                                          <h4><?=$item->name;?></h4>
                                          <p class="ingredients">
@@ -101,7 +105,9 @@
                                <div class="modal fade" id="itemModal<?=$item->Id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                  <div class="modal-dialog">
                                    <div class="modal-content">
-                                    <img src="../media/<?=$item->image;?>" width="100%" alt="">
+                                     <?php if ($item->image): ?>
+                                       <img src="../media/<?=$item->image;?>" width="100%" alt="">
+                                     <?php endif; ?>
                                      <div class="modal-header">
                                        <h1 class="modal-title fs-5"><?=$item->name;?></h1>
                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -124,6 +130,57 @@
                                  </div>
                                </div>
                             <?php endforeach; ?>
+
+
+                                <?php foreach ($unavailable_items as $item):
+
+
+                                   ?>
+                                   <div class="col-lg-4 menu-item" style="margin-bottom:-30px" data-bs-toggle="modal" data-bs-target="#itemModal<?=$item->Id?>">
+
+                                     <div class="card" style="opacity: 0.4; filter: alpha(opacity=40);">
+                                       <div class="card-body">
+                                         <div class="row">
+                                           <?php if ($item->image): ?>
+                                           <div class="col">
+                                               <img src="../media/<?=$item->image;?>" width="100%" alt="">
+                                           </div>
+                                         <?php endif; ?>
+                                           <div class="col">
+                                             <h4><?=$item->name;?></h4>
+                                             <p class="ingredients">
+                                               <?=$item->description;?>
+                                             </p>
+                                             <p class="price">
+                                               <?=format_money($item->price);?>
+                                             </p>
+                                           </div>
+                                         </div>
+                                       </div>
+                                     </div>
+                                   </div>
+
+                                   <!-- Modal -->
+                                   <div class="modal fade" id="itemModal<?=$item->Id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                     <div class="modal-dialog">
+                                       <div class="modal-content">
+                                         <?php if ($item->image): ?>
+                                           <img src="../media/<?=$item->image;?>" width="100%" alt="">
+                                         <?php endif; ?>
+                                         <div class="modal-header">
+                                           <h1 class="modal-title fs-5"><?=$item->name;?></h1>
+                                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                         </div>
+                                         <div class="modal-body" style="color:red;">
+                                           Sorry, this item is out of stock at the moment.
+                                         </div>
+                                         <div class="modal-footer">
+                                           <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                                         </div>
+                                       </div>
+                                     </div>
+                                   </div>
+                                <?php endforeach; ?>
 
 
                            </div>

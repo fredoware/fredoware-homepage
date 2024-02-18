@@ -53,19 +53,26 @@ $store = store()->get("name='$storeName'");
     <div class="container d-flex align-items-center justify-content-between">
 
       <a href="index.php" class="logo d-flex align-items-center me-auto me-lg-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="<?=$ROOT_DIR;?>mb-templates/source/img/logo.png" alt=""> -->
         <img src="../media/<?=$store->logo?>">
         <h1><?=$store->name?></h1>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="menu.php">Menu</a></li>
-          <li><a href="my-cart.php">My Cart</a></li>
-          <li><a href="my-order.php">My Order</a></li>
-          <li><a href="store-qr.php">Store QR Code</a></li>
+          <?php if (!isset($isStaff)): ?>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="menu.php">Menu</a></li>
+            <li><a href="my-cart.php">My Cart</a></li>
+            <li><a href="my-order.php">My Order</a></li>
+            <li><a href="store-qr.php">Store QR Code</a></li>
+          <?php else: ?>
+            <li><a href="kitchen-orders.php?status=Pending">Pending Orders</a></li>
+            <li><a href="kitchen-orders.php?status=Confirmed">Confirmed Orders</a></li>
+            <li><a href="kitchen-orders.php?status=Delivered">Delivered Orders</a></li>
+            <li><a href="kitchen-orders.php?status=Canceled">Canceled Orders</a></li>
+            <li><a href="kitchen-inventory.php">Item lists</a></li>
+            <li><a href="store-qr.php">Store QR Code</a></li>
+          <?php endif; ?>
         </ul>
       </nav><!-- .navbar -->
 
