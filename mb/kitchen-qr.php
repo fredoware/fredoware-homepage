@@ -1,7 +1,6 @@
 <?php
-  $isStaff = true;
   $ROOT_DIR="../";
-  include $ROOT_DIR . "mb-templates/header.php";
+  include $ROOT_DIR . "mb-templates/header-store.php";
 
 ?>
 

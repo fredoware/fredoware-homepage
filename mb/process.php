@@ -11,6 +11,10 @@ switch ($action) {
 			add_to_cart();
 			break;
 
+		case 'store-log-in' :
+			store_log_in();
+			break;
+
 		case 'update-cart' :
 			update_cart();
 			break;
@@ -32,6 +36,19 @@ switch ($action) {
 			break;
 
 	default :
+}
+
+function store_log_in(){
+		$storeCode = $_POST["storeCode"];
+		$password = $_POST["password"];
+
+		$countStore = store()->count("storeCode='$storeCode' and password='$password'");
+		if ($countStore==0):
+			header('Location: sign-in.php?error=Account does not exist');
+		else:
+		  $_SESSION["store"] = $storeCode;
+			header('Location: kitchen-inventory.php');
+		endif;
 }
 
 function change_order_status(){

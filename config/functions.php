@@ -12,6 +12,9 @@ $success = (isset($_GET['success']) && $_GET['success'] != '') ? $_GET['success'
 function get_query_string($keyword, $default){
 	return (isset($_GET[$keyword]) && $_GET[$keyword] != '') ? $_GET[$keyword] : $default;
 }
+function get_session($keyword, $default){
+	return (isset($_SESSION[$keyword]) && $_SESSION[$keyword] != '') ? $_SESSION[$keyword] : $default;
+}
 
 function format_money($value){
 	return "₱" . number_format($value, 2, '.', ',');

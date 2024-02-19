@@ -64,12 +64,12 @@ else{
 
       <nav id="navbar" class="navbar">
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="menu.php">Menu</a></li>
-            <li><a href="my-cart.php">My Cart</a></li>
-            <li><a href="my-order.php">My Order</a></li>
-            <li><a href="store-qr.php">Store QR Code</a></li>
-            <li><a href="sign-in.php">Sign in</a></li>
+            <li><a href="kitchen-orders.php?status=Pending">Pending Orders</a></li>
+            <li><a href="kitchen-orders.php?status=Confirmed">Confirmed Orders</a></li>
+            <li><a href="kitchen-orders.php?status=Delivered">Delivered Orders</a></li>
+            <li><a href="kitchen-orders.php?status=Canceled">Canceled Orders</a></li>
+            <li><a href="kitchen-inventory.php">Item lists</a></li>
+            <li><a href="kitchen-qr.php">Store QR Code</a></li>
         </ul>
       </nav><!-- .navbar -->
 
