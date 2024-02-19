@@ -77,7 +77,7 @@ else{
             <li><a href="kitchen-orders.php?status=Delivered">Delivered Orders</a></li>
             <li><a href="kitchen-orders.php?status=Canceled">Canceled Orders</a></li>
             <li><a href="kitchen-inventory.php">Item lists</a></li>
-            <li><a href="store-qr.php">Store QR Code</a></li>
+            <li><a href="kitchen-qr.php">Store QR Code</a></li>
           <?php endif; ?>
         </ul>
       </nav><!-- .navbar -->

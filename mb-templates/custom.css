@@ -5,7 +5,12 @@
   width: 100%;
 }
 .bottom-sheet-dialog .card{
-  background: red;
+  background: #f5741d;
   color: white;
   margin: 10px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background: #f5741d !important;
+  border: #f5741d !important;
 }

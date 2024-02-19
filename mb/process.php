@@ -54,7 +54,7 @@ function change_item_status(){
 
 function place_order(){
 	$cart = $_SESSION["cart"];
-	$orderNumber = round(microtime(true));
+	$orderNumber = rand(100000,999999);
 
 	$_SESSION["myOrders"][] = $orderNumber;
 
