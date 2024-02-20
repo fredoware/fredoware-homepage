@@ -2,8 +2,7 @@
 session_start();
 include_once($ROOT_DIR . "config/database.php");
 include_once($ROOT_DIR . "config/Models.php");
-$role = $_SESSION["user_session"]["role"];
-$storeId = $_GET["Id"];
+$storeId = $_SESSION["storeId"];
 $store = store()->get("Id=$storeId");
 ?>
 
@@ -34,36 +33,26 @@ $store = store()->get("Id=$storeId");
     </h5>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-      <li>
-        <a href="dashboard.php" class="nav-link text-white">
-          <svg class="bi" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          Dashboard
-        </a>
-      </li>
-
-      <?php if ($role=="Admin"): ?>
       <li class="nav-item">
-        <a href="user.php?role=Admin" class="nav-link text-white" aria-current="page">
-          <svg class="" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Category
-        </a>
-      </li>
-      <?php endif; ?>
-
-
-      <li>
         <a href="store.php" class="nav-link text-white">
           <svg class="bi" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+          Dashboard(Home)
+        </a>
+      </li>
+      <li>
+        <a href="category.php?Id=<?=$storeId?>" class="nav-link text-white" aria-current="page">
+          <svg class="" width="16" height="16"><use xlink:href="#home"></use></svg>
           Menu
         </a>
       </li>
 
       <li>
-        <a href="store-qr.php?Id=<?=$storeId?>" class="nav-link text-white">
+        <a href="process.php?action=view-store-qr&Id=<?=$storeId?>" class="nav-link text-white">
           <svg class="bi" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
           QR Code
         </a>
       </li>
+
 
 
 

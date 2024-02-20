@@ -68,9 +68,8 @@
 
 
         <td>
-          <a href="store-dashboard.php?Id=<?=$row->Id?>" class="btn btn-info">View Store</a>
-           <button type="button" class="btn btn-warning" data-bs-toggle="modal"  data-bs-target="#view<?=$row->Id?>">Edit</button>
-        <a href="process.php?action=delete-user&Id=<?=$row->Id?>&role=<?=$roles?>" class="btn btn-danger">Delete</a> </td>
+          <a href="process.php?action=view-store&Id=<?=$row->Id?>" class="btn btn-info">View Store</a>
+           <a href="process.php?action=delete-store&Id=<?=$row->Id?>" class="btn btn-danger">Delete</a> </td>
 
       <td></td>
       <td></td>
