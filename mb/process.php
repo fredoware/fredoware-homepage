@@ -47,7 +47,7 @@ function store_log_in(){
 			header('Location: sign-in.php?error=Account does not exist');
 		else:
 		  $_SESSION["store"] = $storeCode;
-			header('Location: kitchen-inventory.php');
+			header('Location: kitchen-main.php');
 		endif;
 }
 

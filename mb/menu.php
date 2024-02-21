@@ -266,5 +266,4 @@ function add_to_cart(itemId, price){
 </script>
 
 
-
 <?php include $ROOT_DIR . "mb-templates/footer.php"; ?>

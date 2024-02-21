@@ -7,7 +7,6 @@ class Database
     // private static $dbUserPassword = '';
     // private static $port = '';
 
-
     private static $dbName = 'u437487943_fredowaredb' ;
     private static $dbHost = 'localhost' ;
     private static $dbUsername = 'u437487943_fredowaresql';

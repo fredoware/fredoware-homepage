@@ -1,3 +1,9 @@
+<script type="text/javascript">
+	function format_money(n){
+		n = parseFloat(n).toFixed(2)
+		return "₱" + Number(n).toLocaleString('en');
+	}
+</script>
 <?php
 session_start();
 include_once($ROOT_DIR . "config/database.php");

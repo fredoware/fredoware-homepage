@@ -1,3 +1,9 @@
+<script type="text/javascript">
+	function format_money(n){
+		n = parseFloat(n).toFixed(2)
+		return "₱" + Number(n).toLocaleString('en');
+	}
+</script>
 <?php
 session_start();
 include_once($ROOT_DIR . "config/database.php");
@@ -57,7 +63,7 @@ else{
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="index.php" class="logo d-flex align-items-center me-auto me-lg-0">
+      <a href="kitchen-main.php" class="logo d-flex align-items-center me-auto me-lg-0">
         <img src="../media/<?=$store->logo?>">
         <h1><?=$store->name?></h1>
       </a>
