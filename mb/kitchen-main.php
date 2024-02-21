@@ -27,6 +27,8 @@
         <h2>Notification</h2>
       </div>
 
+      <h1 class="text-center">Stay here to receive notification</h1>
+
       <div class="alert alert-danger" role="alert" id="alertBar" style="display:none;" onclick="location.href='kitchen-orders.php?status=Pending'">
           <span id="totalPending">0</span> new pending orders!
        </div>

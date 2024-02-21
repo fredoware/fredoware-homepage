@@ -70,6 +70,7 @@ else{
 
       <nav id="navbar" class="navbar">
         <ul>
+            <li><a href="kitchen-main.php">Notification</a></li>
             <li><a href="kitchen-orders.php?status=Pending">Pending Orders</a></li>
             <li><a href="kitchen-orders.php?status=Confirmed">Confirmed Orders</a></li>
             <li><a href="kitchen-orders.php?status=Delivered">Delivered Orders</a></li>
