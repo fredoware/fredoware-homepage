@@ -82,6 +82,11 @@
               <?php endforeach; ?>
 
              <hr>
+
+             <b>Notes:</b> <?=$item->notes;?>
+
+             <hr>
+
              <div class="row">
                <div class="col">
                  Total
