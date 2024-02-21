@@ -43,7 +43,7 @@
 
   <script type="text/javascript">
   var qrcode = new QRCode(document.getElementById("qrcode-2"), {
-  	text: "http://192.168.209.46/fredoware-homepage/mb/check-in.php?store=<?=$store->name;?>",
+  	text: "https://fredoware.com/mb/check-in.php?store=<?=$store->name;?>",
   	width: 300,
   	height: 300,
   	colorDark : "#000",
