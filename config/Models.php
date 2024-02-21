@@ -42,4 +42,10 @@ function orderItem() {
 	return $crud;
 }
 
+function user() {
+	$crud = new CRUD;
+	$crud->table = "user";
+	return $crud;
+}
+
 ?>
