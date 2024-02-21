@@ -12,7 +12,7 @@
     <th>Logo</th>
     <th>Store</th>
     <th>Owner</th>
-    <th> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Add Store</button></th>
+    <th> <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addModal">Add Store</button></th>
 
     <th></th>
     <th></th>
@@ -69,6 +69,8 @@
 
         <td>
           <a href="process.php?action=view-store&Id=<?=$row->Id?>" class="btn btn-info">View Store</a>
+
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit<?=$row->Id?>">Edit</button>
            <a href="process.php?action=delete-store&Id=<?=$row->Id?>" class="btn btn-danger">Delete</a> </td>
 
       <td></td>
@@ -77,13 +79,9 @@
 
 
 
-
-
-
-
 <!-- Start modal View -->
 
-<div class="modal fade" id="view<?=$row->Id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit<?=$row->Id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
@@ -92,16 +90,26 @@
 
     </div>
     <div class="modal-body">
-      <form class="" action="process.php?action=edit-user&Id=<?=$row->Id?>&role=<?=$roles?>" method="post">
-        Firstname:
-        <input type="text" name="firstName" class="form-control" value="<?=$row->firstName?>"required>
-        Lastname:
-        <input type="text" name="lastName" class="form-control" value="<?=$row->lastName?>"required>
-        Username:
-        <input type="text" name="username" class="form-control"   value="<?=$row->username?>"required>
+      <form class="" action="process.php?action=edit-store&Id=<?=$row->Id?>" method="post" enctype="multipart/form-data">
+        Store Code:
+        <input type="text" name="storeCode" class="form-control" value="<?=$row->storeCode?>" required>
+        Storename:
+        <input type="text" name="name" class="form-control" value="<?=$row->name?>" required>
+        Owner:
+        <input type="text" name="owner" class="form-control" value="<?=$row->owner?>" required>
+        Phonenumber:
+        <input type="text" name="phone" class="form-control" value="<?=$row->phone?>" required>
+        Address:
+        <input type="text" name="address" class="form-control" value="<?=$row->address?>" required>
+        Email Address:
+        <input type="text" name="email" class="form-control" value="<?=$row->email?>" required>
+        Theme:
+        <input type="text" name="theme" class="form-control" value="<?=$row->theme?>" required>
         Password:
-        <input type="text" name="password" class="form-control" value="<?=$row->password?>" required>
-
+        <input type="text" name="password" class="form-control" value="<?=$password?>" required>
+        <br>
+        Logo:
+        <input type="file" name="logo">
 
     </div>
     <div class="modal-footer">

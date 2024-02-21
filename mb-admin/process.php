@@ -64,6 +64,11 @@ switch ($action) {
 			edit_category();
 			break;
 
+
+		case 'edit-store' :
+			edit_store();
+			break;
+
 	default :
 }
 function log_in()
@@ -225,14 +230,18 @@ function delete_category()
 
 function edit_menu()
 {
+	$Id = $_GET["Id"];
+	$model = menuItem();
 	$categoryId = $_GET["categoryId"];
-  $Id = $_GET["Id"];
-	$image = uploadFile($_FILES["image"]);
-  $model = menuItem();
 	$model->obj["name"] = $_POST["name"];
 	$model->obj["price"] = $_POST["price"];
-	$model->obj["image"] = $image;
-  $model->update("Id=$Id");
+
+	if ($_FILES["image"]["name"]!="") {
+		$image = uploadFile($_FILES["image"]);
+		$model->obj["image"] = $image;
+	}
+
+		$model->update("Id=$Id");
 
 header('Location: menu-item.php?Id=' . $categoryId);
 }
@@ -246,4 +255,29 @@ function edit_category()
   $model->update("Id=$Id");
 
 header('Location: category.php');
+}
+
+function edit_store()
+{
+
+	$Id = $_GET["Id"];
+	$model = store();
+	$model->obj["storeCode"] = $_POST["storeCode"];
+	$model->obj["name"] = $_POST["name"];
+	$model->obj["owner"] = $_POST["owner"];
+	$model->obj["phone"] = $_POST["phone"];
+	$model->obj["address"] = $_POST["address"];
+	$model->obj["email"] = $_POST["email"];
+	$model->obj["theme"] = $_POST["theme"];
+	$model->obj["password"] = $_POST["password"];
+
+	if ($_FILES["logo"]["name"]!="") {
+		$image = uploadFile($_FILES["logo"]);
+		$model->obj["logo"] = $image;
+		}
+
+
+		$model->update("Id=$Id");
+
+header('Location: store.php');
 }
