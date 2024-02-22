@@ -140,6 +140,13 @@
               </div>
             </section><!-- End Menu Section -->
 
+<center>
+    <span class="mobile-nav-toggle mobile-nav-show text-center">
+      <button class=" btn btn-primary">View More Items</button>
+    </span>
+  </center>
+
+
 
 <div class="content-fluid bottom-sheet-dialog" onclick="location.href='my-cart.php'" id="bottom-sheet" style="display:none">
   <div class="card">
