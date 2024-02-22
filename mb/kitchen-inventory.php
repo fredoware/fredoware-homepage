@@ -62,12 +62,18 @@
                            <div class="row gy-5">
 
                             <?php foreach ($item_list as $item):
-                                if ($item->status=="Available") {
-                                  $availabiltyColor = "green";
-                                }
-                                else{
-                                  $availabiltyColor = "red";
-                                }
+                              if ($item->status=="Available") {
+                                $availabiltyColor = "green";
+                              }
+                              else{
+                                $availabiltyColor = "red";
+                              }
+                              if ($item->isBestSeller) {
+                                $bestSellerMark = "Best Seller";
+                              }
+                              else{
+                                $bestSellerMark = "";
+                              }
                                ?>
                                <div class="col-lg-4 menu-item" onclick="open_modal('<?=$item->Id?>')" style="margin-bottom:-30px" data-bs-toggle="modal" data-bs-target="#itemModal<?=$item->Id?>">
 
@@ -87,7 +93,9 @@
                                          <p class="price">
                                            <?=format_money($item->price);?>
                                          </p>
-                                         <p id="availabilty<?=$item->Id?>" style="font-weight:bold;color:<?=$availabiltyColor;?>"><?=$item->status?></p>
+                                         <span id="availabilty<?=$item->Id?>" style="font-weight:bold;color:<?=$availabiltyColor;?>"><?=$item->status?></span>
+                                         <br>
+                                         <span id="bestSellerMark<?=$item->Id?>" style="font-weight:bold;color:orange;"><?=$bestSellerMark?></span>
                                        </div>
                                      </div>
                                    </div>
@@ -103,10 +111,24 @@
                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                      </div>
                                      <div class="modal-body">
-                                       Mark item as <b id="markAs<?=$item->Id?>">Status</b>
-                                     </div>
-                                     <div class="modal-footer">
-                                       <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" onclick="change_item_status('<?=$item->Id?>')">Go</button>
+                                       <div class="row">
+                                         <div class="col-6">
+                                           <div class="card"  data-bs-dismiss="modal" aria-label="Close" onclick="change_item_status('<?=$item->Id?>')">
+                                             <div class="card-body text-center">
+                                               Mark as <br> <b id="markAs<?=$item->Id?>">Status</b>
+                                             </div>
+                                           </div>
+                                         </div>
+
+                                         <div class="col-6">
+                                           <div class="card"  data-bs-dismiss="modal" aria-label="Close" onclick="best_seller_option('<?=$item->Id?>')">
+                                             <div class="card-body text-center">
+                                               <span >Add to or Remove from</span> <br> <b style="color:orange;">best Sellers</b>
+                                             </div>
+                                           </div>
+                                         </div>
+
+                                       </div>
                                      </div>
                                    </div>
                                  </div>
@@ -160,7 +182,24 @@ function change_item_status(itemId){
       type: "GET",
       url: "process.php?action=change-item-status&Id=" + itemId + "&status=" + availabilty.innerHTML,
     });
+}
 
+function best_seller_option(itemId){
+  var bestSellerMark = document.getElementById("bestSellerMark"+itemId);
+  var isBestSeller = 0;
+  if (bestSellerMark.innerHTML=="Best Seller") {
+    bestSellerMark.innerHTML = "";
+    isBestSeller = 0;
+  }
+  else{
+    bestSellerMark.innerHTML = "Best Seller";
+    isBestSeller = 1;
+  }
+
+  $.ajax({
+      type: "GET",
+      url: "process.php?action=best-seller-option&Id=" + itemId + "&value=" + isBestSeller,
+    });
 }
 
 </script>

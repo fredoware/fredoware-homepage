@@ -70,13 +70,17 @@ else{
 
       <nav id="navbar" class="navbar">
         <ul>
-            <li><a href="kitchen-main.php">Notification</a></li>
+            <li><a href="kitchen-main.php" style="color:red;">Notification</a></li>
+						<hr>
             <li><a href="kitchen-orders.php?status=Pending">Pending Orders</a></li>
             <li><a href="kitchen-orders.php?status=Confirmed">Confirmed Orders</a></li>
             <li><a href="kitchen-orders.php?status=Delivered">Delivered Orders</a></li>
             <li><a href="kitchen-orders.php?status=Canceled">Canceled Orders</a></li>
-            <li><a href="kitchen-inventory.php">Item lists</a></li>
-                <li><a href="kitchen-customer-menu.php">Customer Order</a></li>
+						<hr>
+            <li><a href="kitchen-inventory.php">Menu Set up</a></li>
+            <li><a href="kitchen-best-sellers.php" style="color:green;">Best Sellers!</a></li>
+            <li><a href="kitchen-not-available.php" style="color:red;">Unavailable items</a></li>
+            <li><a href="kitchen-customer-menu.php">Customer Order</a></li>
             <li><a href="kitchen-qr.php">Store QR Code</a></li>
         </ul>
       </nav><!-- .navbar -->

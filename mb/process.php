@@ -35,6 +35,10 @@ switch ($action) {
 			change_item_status();
 			break;
 
+		case 'best-seller-option' :
+			best_seller_option();
+			break;
+
 	default :
 }
 
@@ -56,6 +60,15 @@ function change_order_status(){
 
 	$model = orderMain();
 	$model->obj["status"] = $_GET["status"];
+	$model->update("Id=$Id");
+
+}
+
+function best_seller_option(){
+	$Id = $_GET["Id"];
+
+	$model = menuItem();
+	$model->obj["isBestSeller"] = $_GET["value"];
 	$model->update("Id=$Id");
 
 }
@@ -91,6 +104,12 @@ function place_order(){
 		$model->obj["quantity"] = $value;
 		$model->obj["dateAdded"] = "NOW()";
 		$model->create();
+
+		$item = menuItem()->get("Id=$key");
+		$model = menuItem();
+		$model->obj["totalOrder"] = $item->totalOrder + 1;
+		$model->update("Id=$item->Id");
+
 	}
 
 	$_SESSION["cart"] = array();

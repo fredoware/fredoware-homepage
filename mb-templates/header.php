@@ -12,6 +12,8 @@ include_once($ROOT_DIR . "config/Models.php");
 if (isset($_SESSION["store"])) {
   $storeName = $_SESSION["store"];
   $store = store()->get("name='$storeName'");
+
+  $category_list = menuCategory()->list("storeId=$store->Id");
 }
 else{
   header("Location: qr-expired.php");
@@ -63,15 +65,18 @@ else{
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="index.php" class="logo d-flex align-items-center me-auto me-lg-0">
+      <a href="best-sellers.php" class="logo d-flex align-items-center me-auto me-lg-0">
         <img src="../media/<?=$store->logo?>">
         <h1><?=$store->name?></h1>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="menu.php">Menu</a></li>
+            <li><a href="best-sellers.php" style="color:red;">Best Sellers!</a></li>
+						<?php foreach ($category_list as $row): ?>
+	            <li><a href="menu-item.php?Id=<?=$row->Id?>"><?=$row->name?></a></li>
+						<?php endforeach; ?>
+						<hr>
             <li><a href="my-cart.php">My Cart</a></li>
             <li><a href="my-order.php">My Order</a></li>
             <li><a href="store-qr.php">Store QR Code</a></li>
