@@ -8,6 +8,8 @@
 
   $order_list = orderMain()->list("status='$status' and storeCode='$storeName' and date='$date'");
 
+  $totalItems = count($order_list);
+
   function get_total_amount($orderNumber){
     $result = 0;
 
@@ -29,7 +31,9 @@
 
 
       <div class="section-header">
-        <h2><?=$status?> Orders</h2>
+        <h2><?=$status?> Orders
+        <span class="badge text-bg-warning"><?=$totalItems?></span>
+      </h2>
 
 
                     <form  action="kitchen-orders.php" method="get"  class="input-group mt-3 mb-3">
