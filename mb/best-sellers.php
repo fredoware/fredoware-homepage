@@ -2,7 +2,7 @@
   $ROOT_DIR="../";
   include $ROOT_DIR . "mb-templates/header.php";
 
-  $available_items = menuItem()->list("storeId=$store->Id and isBestSeller=1 and status='Available'");
+  $available_items = menuItem()->list("storeId=$store->Id and isBestSeller=1 and status='Available' order by priority");
   $unavailable_items = menuItem()->list("storeId=$store->Id and isBestSeller=1 and status='Not Available'");
 
   $cart = $_SESSION["cart"];
@@ -142,7 +142,7 @@
 
 <center>
     <span class="mobile-nav-toggle mobile-nav-show text-center">
-      <button class=" btn btn-primary">View More Items</button>
+      <button class=" btn btn-primary mb-3">View More Items</button>
     </span>
   </center>
 

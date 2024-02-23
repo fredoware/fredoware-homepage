@@ -6,7 +6,9 @@ $json = array();
 
 $storeName = $_GET["storeName"];
 
-$json["totalPending"] = orderMain()->count("status='Pending' and storeCode='$storeName'");
+$date = date("Y-m-d");
+
+$json["totalPending"] = orderMain()->count("status='Pending' and storeCode='$storeName' and date='$date'");
 
 echo json_encode($json);
 ?>

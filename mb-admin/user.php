@@ -1,6 +1,6 @@
 <?php
   $ROOT_DIR="../";
-  include $ROOT_DIR . "mb-admin-templates/header.php";
+  include "templates/header.php";
   $roles = get_query_string("role", "");
   $user_list = user()->list("role='$roles'");
   $password = rand_string(6); //the number specified in brackets is the amount of characters in your password
@@ -107,4 +107,4 @@
 <?php endforeach; ?>
 </table>
 </div>
-<?php include $ROOT_DIR . "mb-admin-templates/footer.php"; ?>
+<?php include "templates/footer.php"; ?>

@@ -1,6 +1,6 @@
 <?php
   $ROOT_DIR="../";
-  include $ROOT_DIR . "mb-admin-templates/header.php";
+  include "templates/header.php";
   $store_count = store()->count();
   ?>
   <div class="row">
@@ -39,4 +39,4 @@
 
 
 
-<?php include $ROOT_DIR . "mb-admin-templates/footer.php"; ?>
+<?php include "templates/footer.php"; ?>

@@ -7,6 +7,30 @@ $action = $_GET['action'];
 
 switch ($action) {
 
+		case 'store-save' :
+			store_save();
+			break;
+
+		case 'category-save' :
+			category_save();
+			break;
+
+		case 'category-delete' :
+			category_delete();
+			break;
+
+		case 'item-save' :
+			item_save();
+			break;
+
+		case 'item-delete' :
+			item_delete();
+			break;
+
+		// ======================================
+		// Please Refactor (for keneth)
+		// ======================================
+
 		case 'log-in' :
 			log_in();
 			break;
@@ -21,10 +45,6 @@ switch ($action) {
 
 		case 'edit-user' :
 			edit_user();
-			break;
-
-		case 'add-store' :
-			add_store();
 			break;
 
 		case 'delete-store' :
@@ -51,19 +71,6 @@ switch ($action) {
 		case 'delete-menu' :
 			delete_menu();
 			break;
-
-		case 'add-category' :
-			add_category();
-			break;
-
-		case 'delete-category' :
-			delete_category();
-			break;
-
-		case 'edit-category' :
-			edit_category();
-			break;
-
 
 		case 'edit-store' :
 			edit_store();
@@ -130,11 +137,10 @@ function delete_user()
 
 }
 
-function add_store()
+function store_save()
 {
 
 		$model = store();
-		$image = uploadFile($_FILES["logo"]);
   	$model->obj["storeCode"] = $_POST["storeCode"];
   	$model->obj["owner"] = $_POST["owner"];
   	$model->obj["name"] = $_POST["name"];
@@ -143,13 +149,110 @@ function add_store()
   	$model->obj["address"] = $_POST["address"];
   	$model->obj["theme"] = $_POST["theme"];
   	$model->obj["email"] = $_POST["email"];
-  	$model->obj["password"] = $_POST["password"];
-		$model->obj["logo"] = $image;
-  	$model->create();
 
+		if ($_POST["form-type"] == "add") {
+	  	$model->obj["password"] = $_POST["password"];
+			if ($_FILES['logo']['name'] != "") {
+				$image_file_name = uploadFile($_FILES["logo"]);
+				$model->obj["logo"] = $image_file_name;
+			}
+			$model->create();
+		}
 
-header('Location: store.php?role='. $role);
+		if ($_POST["form-type"] == "edit") {
+			$Id = $_POST["Id"];
+			if ($_FILES['logo']['name'] != "") {
+				$store = store()->get("Id=$Id");
+				unlink('../media/' . $store->logo);
+				$image_file_name = uploadFile($_FILES["logo"]);
+				$model->obj["logo"] = $image_file_name;
+			}
+			$model->update("Id=$Id");
+		}
+
+header('Location: store.php');
 }
+
+function category_save()
+{
+
+		$model = menuCategory();
+  	$model->obj["storeId"] = $_POST["storeId"];
+  	$model->obj["name"] = $_POST["name"];
+  	$model->obj["description"] = $_POST["description"];
+
+		if ($_POST["form-type"] == "add") {
+			if ($_FILES['image']['name'] != "") {
+				$image_file_name = uploadFile($_FILES["image"]);
+				$model->obj["image"] = $image_file_name;
+			}
+			$model->create();
+		}
+
+		if ($_POST["form-type"] == "edit") {
+			$Id = $_POST["Id"];
+			if ($_FILES['image']['name'] != "") {
+				$category = menuCategory()->get("Id=$Id");
+				unlink('../media/' . $category->image);
+				$image_file_name = uploadFile($_FILES["image"]);
+				$model->obj["image"] = $image_file_name;
+			}
+			$model->update("Id=$Id");
+		}
+
+
+header('Location: category.php' );
+}
+
+
+
+function item_save()
+{
+
+		$model = menuItem();
+  	$model->obj["storeId"] = $_POST["storeId"];
+  	$model->obj["menuCategoryId"] = $_POST["menuCategoryId"];
+  	$model->obj["name"] = $_POST["name"];
+  	$model->obj["price"] = $_POST["price"];
+  	$model->obj["description"] = $_POST["description"];
+
+		if ($_POST["form-type"] == "add") {
+			if ($_FILES['image']['name'] != "") {
+				$image_file_name = uploadFile($_FILES["image"]);
+				$model->obj["image"] = $image_file_name;
+			}
+			$model->create();
+		}
+
+		if ($_POST["form-type"] == "edit") {
+			$Id = $_POST["Id"];
+			if ($_FILES['image']['name'] != "") {
+				$category = menuItem()->get("Id=$Id");
+				unlink('../media/' . $category->image);
+				$image_file_name = uploadFile($_FILES["image"]);
+				$model->obj["image"] = $image_file_name;
+			}
+			$model->update("Id=$Id");
+		}
+
+
+header('Location: menu-item.php?Id=' . $_POST["menuCategoryId"]);
+}
+
+function item_delete()
+{
+	$Id = $_GET["Id"];
+	$item = menuItem()->get("Id=$Id");
+	$catId = $item->menuCategoryId;
+		// Delete item
+	unlink('../media/' . $item->image);
+  $model = menuItem();
+	$model->delete("Id=$Id");
+
+	header('Location: menu-item.php?Id=' . $catId);
+}
+
+
 function view_store()
 {
 			$_SESSION["storeId"] = $_GET['Id'];
@@ -185,21 +288,7 @@ function delete_menu()
 	header('Location: menu-item.php?Id=' . $categoryId);
 }
 
-function add_category()
-{
 
-		$storeId = $_GET["storeId"];
-		$model = menuCategory();
-		$image = uploadFile($_FILES["image"]);
-  	$model->obj["storeId"] = $_POST["storeId"];
-  	$model->obj["name"] = $_POST["name"];
-  	$model->obj["description"] = $_POST["description"];
-		$model->obj["image"] = $image;
-		$model->create();
-
-
-header('Location: category.php?Id=' . $storeId );
-}
 
 function add_menu()
 {
@@ -218,10 +307,12 @@ function add_menu()
 header('Location: menu-item.php?Id=' . $Id );
 }
 
-function delete_category()
+function category_delete()
 {
-	$_SESSION["storeId"] = $_GET['storeId'];
 	$Id = $_GET["Id"];
+	$item = menuCategory()->get("Id=$Id");
+		// Delete item
+	unlink('../media/' . $item->image);
   $model = menuCategory();
 	$model->delete("Id=$Id");
 
@@ -244,17 +335,6 @@ function edit_menu()
 		$model->update("Id=$Id");
 
 header('Location: menu-item.php?Id=' . $categoryId);
-}
-
-function edit_category()
-{
-
-  $Id = $_GET["Id"];
-  $model = menuCategory();
-	$model->obj["name"] = $_POST["name"];
-  $model->update("Id=$Id");
-
-header('Location: category.php');
 }
 
 function edit_store()

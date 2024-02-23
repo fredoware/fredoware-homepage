@@ -1,6 +1,6 @@
 <?php
   $ROOT_DIR="../";
-  include $ROOT_DIR . "mb-admin-templates/store-header.php";
+  include "templates/store-header.php";
   $user_list = user()->list();
   $totalClient = user()->count("role='Client'");
   $totalManager = user()->count("role='Manager'");
@@ -105,4 +105,4 @@
 
 
 
-<?php include $ROOT_DIR . "mb-admin-templates/footer.php"; ?>
+<?php include "templates/footer.php"; ?>

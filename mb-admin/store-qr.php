@@ -1,6 +1,6 @@
 <?php
   $ROOT_DIR="../";
-  include $ROOT_DIR . "mb-admin-templates/store-header.php";
+  include "templates/store-header.php";
 
 ?>
 

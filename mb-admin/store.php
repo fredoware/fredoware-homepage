@@ -1,6 +1,6 @@
 <?php
   $ROOT_DIR="../";
-  include $ROOT_DIR . "mb-admin-templates/header.php";
+  include "templates/header.php";
   $store_list = store()->list();
   $password = rand_string(6); //the number specified in brackets is the amount of characters in your password
 
@@ -8,120 +8,131 @@
 
 
 <h1>Store</h1>
+
+
+<a type="button" class="btn btn-warning" href="javascript:void(0)" id="btn-add-store">Add Store</a>
+
+<div class="modal fade" id="formItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Store Form</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form action="process.php?action=store-save" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="Id" id="input-Id">
+        Store Code:
+        <input type="text" name="storeCode" id="input-storeCode" class="form-control" required>
+        Storename:
+        <input type="text" name="name" id="input-name" class="form-control" required>
+        Owner:
+        <input type="text" name="owner" id="input-owner" class="form-control" required>
+        Phonenumber:
+        <input type="text" name="phone" id="input-phone" class="form-control" required>
+        Address:
+        <input type="text" name="address" id="input-address" class="form-control" required>
+        Email Address:
+        <input type="text" name="email" id="input-email" class="form-control" required>
+        Theme:
+        <input type="text" name="theme" id="input-theme" class="form-control" required>
+        Password:
+        <input type="text" name="password" id="input-password" class="form-control" required>
+        <br>
+        Logo:
+        <input type="file" class="form-control" id="input-logo" name="logo" required>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button name="form-type" value="add" id="btn-add" class="btn btn-primary">Add</button>
+      <button name="form-type" value="edit" id="btn-edit" class="btn btn-warning">Save</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
   <table class="table">
     <th>Logo</th>
     <th>Store</th>
     <th>Owner</th>
-    <th> <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addModal">Add Store</button></th>
+    <th>Action</th>
 
-    <th></th>
-    <th></th>
-    <!-- Start modal Add -->
-    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add new Store</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form class="" action="process.php?action=add-store" method="post" enctype="multipart/form-data">
-            Store Code:
-            <input type="text" name="storeCode" class="form-control" required>
-            Storename:
-            <input type="text" name="name" class="form-control" required>
-            Owner:
-            <input type="text" name="owner" class="form-control" required>
-            Phonenumber:
-            <input type="text" name="phone" class="form-control" required>
-            Address:
-            <input type="text" name="address" class="form-control" required>
-            Email Address:
-            <input type="text" name="email" class="form-control" required>
-
-            <input type="hidden" name="email" class="form-control" required>
-
-            Theme:
-            <input type="text" name="theme" class="form-control" required>
-            Password:
-            <input type="text" name="password" class="form-control" value="<?=$password?>" required>
-            <br>
-            Logo:
-            <input type="file" name="logo" required>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    </div>
     <!-- End modal Add -->
 
     <?php foreach ($store_list as $row): ?>
-      <tr>
-        <td><img src="../media/<?=$row->logo?>" style="width:40px; height:40px; border-radius:50%;"></td>
+      <tr class="item-items">
+        <td class="item-data"
+            data-id="<?=$row->Id;?>"
+            data-storeCode="<?=$row->storeCode;?>"
+            data-name="<?=$row->name;?>"
+            data-owner="<?=$row->owner;?>"
+            data-phone="<?=$row->phone;?>"
+            data-address="<?=$row->address;?>"
+            data-email="<?=$row->email;?>"
+            data-theme="<?=$row->theme;?>">
+
+    <img src="../media/<?=$row->logo?>" style="width:40px; height:40px; border-radius:50%;"></td>
         <td><?=$row->name?></td>
         <td><?=$row->owner?></td>
 
 
         <td>
           <a href="process.php?action=view-store&Id=<?=$row->Id?>" class="btn btn-info">View Store</a>
+          <a href="javascript:void(0)" class="btn btn-warning edit">Edit</a>
+         <!-- <a href="process.php?action=delete-store&Id=<?=$row->Id?>" class="btn btn-danger" >Delete</a> </td> -->
 
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit<?=$row->Id?>">Edit</button>
-           <a href="process.php?action=delete-store&Id=<?=$row->Id?>" class="btn btn-danger">Delete</a> </td>
-
-      <td></td>
-      <td></td>
       </tr>
 
-
-
-<!-- Start modal View -->
-
-<div class="modal fade" id="edit<?=$row->Id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Edit Admin</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">Close</button>
-
-    </div>
-    <div class="modal-body">
-      <form class="" action="process.php?action=edit-store&Id=<?=$row->Id?>" method="post" enctype="multipart/form-data">
-        Store Code:
-        <input type="text" name="storeCode" class="form-control" value="<?=$row->storeCode?>" required>
-        Storename:
-        <input type="text" name="name" class="form-control" value="<?=$row->name?>" required>
-        Owner:
-        <input type="text" name="owner" class="form-control" value="<?=$row->owner?>" required>
-        Phonenumber:
-        <input type="text" name="phone" class="form-control" value="<?=$row->phone?>" required>
-        Address:
-        <input type="text" name="address" class="form-control" value="<?=$row->address?>" required>
-        Email Address:
-        <input type="text" name="email" class="form-control" value="<?=$row->email?>" required>
-        Theme:
-        <input type="text" name="theme" class="form-control" value="<?=$row->theme?>" required>
-        Password:
-        <input type="text" name="password" class="form-control" value="<?=$password?>" required>
-        <br>
-        Logo:
-        <input type="file" name="logo">
-
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-primary">Save changes</button>
-      </form>
-    </div>
-  </div>
-</div>
-</div>
-<!-- End modal View -->
 <?php endforeach; ?>
 </table>
 </div>
-<?php include $ROOT_DIR . "mb-admin-templates/footer.php"; ?>
+
+
+<?php include "templates/footer.php"; ?>
+
+<script type="text/javascript">
+$(function () {
+
+    $("#btn-add-store").on("click", function (event) {
+
+      $("#formItemModal #btn-add").show();
+      $("#formItemModal #btn-edit").hide();
+      $("#formItemModal").modal("show");
+    });
+
+    function editContact() {
+      $(".edit").on("click", function (event) {
+
+        $("#formItemModal #btn-add").hide();
+        $("#formItemModal #btn-edit").show();
+
+        var getParentItem = $(this).parents(".item-items");
+        var getModal = $("#formItemModal");
+
+        // Get List Item Fields
+        var $_name = getParentItem.find(".item-data");
+
+        // Set Modal Field's Value
+        getModal.find("#input-id").val($_name.attr("data-id"));
+        getModal.find("#input-storeCode").val($_name.attr("data-storeCode"));
+        getModal.find("#input-name").val($_name.attr("data-name"));
+        getModal.find("#input-owner").val($_name.attr("data-owner"));
+        getModal.find("#input-phone").val($_name.attr("data-phone"));
+        getModal.find("#input-address").val($_name.attr("data-address"));
+        getModal.find("#input-email").val($_name.attr("data-email"));
+        getModal.find("#input-theme").val($_name.attr("data-theme"));
+        getModal.find("#input-password").attr("disabled", true);
+        getModal.find("#input-password").val("Not Shown for security");
+        getModal.find("#input-logo").attr("required", false);
+
+        $("#formItemModal").modal("show");
+      });
+    }
+
+    editContact();
+
+  });
+
+</script>

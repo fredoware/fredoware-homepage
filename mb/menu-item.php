@@ -6,7 +6,7 @@
 
   $category = menuCategory()->get("Id=$Id");
 
-  $available_items = menuItem()->list("menuCategoryId=$Id and status='Available'");
+  $available_items = menuItem()->list("menuCategoryId=$Id and status='Available' order by priority");
   $unavailable_items = menuItem()->list("menuCategoryId=$Id and status='Not Available'");
 
   $cart = $_SESSION["cart"];

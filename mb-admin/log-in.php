@@ -1,6 +1,6 @@
 <?php
   $ROOT_DIR="../";
-  include $ROOT_DIR . "mb-admin-templates/header0.php";
+  include "templates/header0.php";
   ?>
   <div class="card text-center mt-5" style="width:30%;">
   <div class="card-header text-white bg-dark ">
