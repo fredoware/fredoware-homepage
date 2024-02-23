@@ -2,9 +2,11 @@
   $ROOT_DIR="../";
   include $ROOT_DIR . "mb-templates/header-store.php";
 
+  $date = get_query_string("date", date("Y-m-d"));
+
   $status = $_GET["status"];
 
-  $order_list = orderMain()->list("status='$status' and storeCode='$storeName'");
+  $order_list = orderMain()->list("status='$status' and storeCode='$storeName' and date='$date'");
 
   function get_total_amount($orderNumber){
     $result = 0;
@@ -25,8 +27,18 @@
   <section id="menu" class="menu">
     <div class="container" data-aos="fade-up">
 
+
       <div class="section-header">
-        <h2>My Orders</h2>
+        <h2><?=$status?> Orders</h2>
+
+
+                    <form  action="kitchen-orders.php" method="get"  class="input-group mt-3 mb-3">
+
+                        <input type="hidden" name="status" value="<?=$status?>">
+                        <input type="date" class="form-control" value="<?=$date?>" name="date"  onchange="this.form.submit()"  required/>
+
+                    </form>
+
       </div>
 
       <div class="row">
