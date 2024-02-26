@@ -64,9 +64,28 @@
 
         <td>
           <a href="javascript:void(0)" class="btn btn-warning edit">Edit</a>
-         <a href="process.php?action=item-delete&Id=<?=$row->Id?>" class="btn btn-danger" >Delete</a> </td>
+         <a href="" data-bs-toggle="modal" data-bs-target="#deleteItem<?=$row->Id?>" class="btn btn-danger" >Delete</a> </td>
 
       </tr>
+
+      <!-- Modal -->
+      <div class="modal fade" id="deleteItem<?=$row->Id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Warning</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to delete this?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a href="process.php?action=item-delete&Id=<?=$row->Id?>" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
 <?php endforeach; ?>
 </table>
