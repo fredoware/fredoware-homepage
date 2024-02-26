@@ -151,9 +151,12 @@ function store_save()
   	$model->obj["email"] = $_POST["email"];
 
 		if ($_POST["form-type"] == "add") {
+			// Create directory
+			$newDri = "../media/" . $_POST["storeCode"];
+			mkdir($newDri);
 	  	$model->obj["password"] = $_POST["password"];
 			if ($_FILES['logo']['name'] != "") {
-				$image_file_name = uploadFile($_FILES["logo"]);
+				$image_file_name = uploadFile($_FILES["logo"], $_POST["storeCode"]);
 				$model->obj["logo"] = $image_file_name;
 			}
 			$model->create();
@@ -164,7 +167,7 @@ function store_save()
 			if ($_FILES['logo']['name'] != "") {
 				$store = store()->get("Id=$Id");
 				unlink('../media/' . $store->logo);
-				$image_file_name = uploadFile($_FILES["logo"]);
+				$image_file_name = uploadFile($_FILES["logo"], $store->storeCode);
 				$model->obj["logo"] = $image_file_name;
 			}
 			$model->update("Id=$Id");
@@ -175,6 +178,8 @@ header('Location: store.php');
 
 function category_save()
 {
+		$storeId = $_SESSION["storeId"];
+		$store = store()->get("Id=$storeId");
 
 		$model = menuCategory();
   	$model->obj["storeId"] = $_POST["storeId"];
@@ -183,7 +188,7 @@ function category_save()
 
 		if ($_POST["form-type"] == "add") {
 			if ($_FILES['image']['name'] != "") {
-				$image_file_name = uploadFile($_FILES["image"]);
+				$image_file_name = uploadFile($_FILES["image"], $store->storeCode);
 				$model->obj["image"] = $image_file_name;
 			}
 			$model->create();
@@ -194,7 +199,7 @@ function category_save()
 			if ($_FILES['image']['name'] != "") {
 				$category = menuCategory()->get("Id=$Id");
 				unlink('../media/' . $category->image);
-				$image_file_name = uploadFile($_FILES["image"]);
+				$image_file_name = uploadFile($_FILES["image"], $store->storeCode);
 				$model->obj["image"] = $image_file_name;
 			}
 			$model->update("Id=$Id");
@@ -209,6 +214,9 @@ header('Location: category.php' );
 function item_save()
 {
 
+		$storeId = $_SESSION["storeId"];
+		$store = store()->get("Id=$storeId");
+
 		$model = menuItem();
   	$model->obj["storeId"] = $_POST["storeId"];
   	$model->obj["menuCategoryId"] = $_POST["menuCategoryId"];
@@ -218,7 +226,7 @@ function item_save()
 
 		if ($_POST["form-type"] == "add") {
 			if ($_FILES['image']['name'] != "") {
-				$image_file_name = uploadFile($_FILES["image"]);
+				$image_file_name = uploadFile($_FILES["image"], $store->storeCode);
 				$model->obj["image"] = $image_file_name;
 			}
 			$model->create();
@@ -227,9 +235,9 @@ function item_save()
 		if ($_POST["form-type"] == "edit") {
 			$Id = $_POST["Id"];
 			if ($_FILES['image']['name'] != "") {
-				$category = menuItem()->get("Id=$Id");
-				unlink('../media/' . $category->image);
-				$image_file_name = uploadFile($_FILES["image"]);
+				$item = menuItem()->get("Id=$Id");
+				unlink('../media/' . $item->image);
+				$image_file_name = uploadFile($_FILES["image"], $store->storeCode);
 				$model->obj["image"] = $image_file_name;
 			}
 			$model->update("Id=$Id");

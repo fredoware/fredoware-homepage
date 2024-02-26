@@ -52,21 +52,37 @@ function send_message($number,$message){
 }
 /* =====================================Functions===================================== */
 /* Retrieve one record */
-function uploadFile($uploadedFile){
+function uploadFile($uploadedFile, $dir){
 	// Where the file is going to be placed
-	$target_path = "../media/";
+	$target_path = "../media/" . $dir . "/";
 	/* Add the original filename to our target path.
 	Result is "uploads/filename.extension" */
 	// $target_path = $target_path . basename( $uploadedFile['name']);
 	$temp = explode(".", $uploadedFile["name"]);
 	$newfilename = round(microtime(true)) . $uploadedFile["name"];
 	if(move_uploaded_file($uploadedFile['tmp_name'], $target_path . $newfilename)) {
-			return $newfilename;
+			return $dir ."/". $newfilename;
 		}
 		else{
 			return 0;
 		}
 }
+
+// function uploadFile($uploadedFile){
+// 	// Where the file is going to be placed
+// 	$target_path = "../media/";
+// 	/* Add the original filename to our target path.
+// 	Result is "uploads/filename.extension" */
+// 	// $target_path = $target_path . basename( $uploadedFile['name']);
+// 	$temp = explode(".", $uploadedFile["name"]);
+// 	$newfilename = round(microtime(true)) . $uploadedFile["name"];
+// 	if(move_uploaded_file($uploadedFile['tmp_name'], $target_path . $newfilename)) {
+// 			return $newfilename;
+// 		}
+// 		else{
+// 			return 0;
+// 		}
+// }
 /* Retrieve one record */
 function uploadMultipleFile($uploadedFile){
 	$filenameList = array();
