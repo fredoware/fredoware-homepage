@@ -1,7 +1,7 @@
 <?php
   session_start();
-  require_once 'config/database.php';
-  require_once 'config/Models.php';
+  require_once '../config/database.php';
+  require_once '../config/Models.php';
 
   $_SESSION["store"] = $_GET["store"];
 	$_SESSION["cart"] = array();
@@ -15,6 +15,6 @@
   $model->obj["totalVisitor"] = $store->totalVisitor + 1;
   $model->update("Id=$store->Id");
 
-  header('Location: pages/best-sellers.php');
+  header('Location: best-sellers.php');
 
 ?>

@@ -1,9 +1,12 @@
 <?php
-  $ROOT_DIR="../";
-  include $ROOT_DIR . "mb-templates/header.php";
+  include "templates/header.php";
 
-  $available_items = menuItem()->list("storeId=$store->Id and isBestSeller=1 and status='Available' order by priority");
-  $unavailable_items = menuItem()->list("storeId=$store->Id and isBestSeller=1 and status='Not Available'");
+  $Id = $_GET["Id"];
+
+  $category = menuCategory()->get("Id=$Id");
+
+  $available_items = menuItem()->list("menuCategoryId=$Id and status='Available' order by priority");
+  $unavailable_items = menuItem()->list("menuCategoryId=$Id and status='Not Available'");
 
   $cart = $_SESSION["cart"];
 
@@ -22,7 +25,7 @@
     <div class="container" data-aos="fade-up">
 
       <div class="menu-header text-center">
-        <h6>Best Sellers!</h6>
+        <h6><?=$category->name;?></h6>
       </div>
 
       <div class="row gy-5">
@@ -140,13 +143,6 @@
               </div>
             </section><!-- End Menu Section -->
 
-<center>
-    <span class="mobile-nav-toggle mobile-nav-show text-center">
-      <button class=" btn btn-primary mb-3">View More Items</button>
-    </span>
-  </center>
-
-
 
 <div class="content-fluid bottom-sheet-dialog" onclick="location.href='my-cart.php'" id="bottom-sheet" style="display:none">
   <div class="card">
@@ -217,4 +213,4 @@ function add_to_cart(itemId, price){
 </script>
 
 
-<?php include $ROOT_DIR . "mb-templates/footer.php"; ?>
+<?php include "templates/footer.php"; ?>

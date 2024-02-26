@@ -9,8 +9,8 @@ session_start();
 include_once($ROOT_DIR . "config/database.php");
 include_once($ROOT_DIR . "config/Models.php");
 
-if (isset($_SESSION["store"])) {
-  $storeName = $_SESSION["store"];
+if (isset($_GET["store"])) {
+  $storeName = $_GET["store"];
   $store = store()->get("name='$storeName'");
 
   $category_list = menuCategory()->list("storeId=$store->Id");
@@ -31,8 +31,8 @@ else{
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?=$ROOT_DIR;?>mb-templates/source/img/favicon.png" rel="icon">
-  <link href="<?=$ROOT_DIR;?>mb-templates/source/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="templates/source/img/favicon.png" rel="icon">
+  <link href="templates/source/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,15 +40,15 @@ else{
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="<?=$ROOT_DIR;?>mb-templates/source/bootstrap.min.css" rel="stylesheet">
-  <link href="<?=$ROOT_DIR;?>mb-templates/source/bootstrap-icons.css" rel="stylesheet">
-  <link href="<?=$ROOT_DIR;?>mb-templates/source/aos.css" rel="stylesheet">
-  <link href="<?=$ROOT_DIR;?>mb-templates/source/glightbox.min.css" rel="stylesheet">
-  <link href="<?=$ROOT_DIR;?>mb-templates/source/swiper-bundle.min.css" rel="stylesheet">
+  <link href="templates/source/bootstrap.min.css" rel="stylesheet">
+  <link href="templates/source/bootstrap-icons.css" rel="stylesheet">
+  <link href="templates/source/aos.css" rel="stylesheet">
+  <link href="templates/source/glightbox.min.css" rel="stylesheet">
+  <link href="templates/source/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="<?=$ROOT_DIR;?>mb-templates/source/main.css" rel="stylesheet">
-  <link href="<?=$ROOT_DIR;?>mb-templates/custom.css" rel="stylesheet">
+  <link href="templates/source/main.css" rel="stylesheet">
+  <link href="templates/custom.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Yummy
