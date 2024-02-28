@@ -98,14 +98,47 @@ header('Location: log-in.php?error=You entered a non-existing account');
   }
 else {
 	$user = user()->get("username='$username'");
-			$_SESSION["user_session"] = array();
-			$_SESSION["user_session"]["role"] = $user->role;
-			$_SESSION["user_session"]["firstName"] = $user->firstName;
+	$_SESSION["user_session"] = array();
+	$_SESSION["user_session"]["role"] = $user->role;
+	$_SESSION["user_session"]["firstName"] = $user->firstName;
 
 		header('Location: index.php?success=Welcome, '. $user->firstName);
 }
 }
 
+<<<<<<< HEAD:mb/admin/process.php
+=======
+function add_user()
+{
+
+	$role = $_GET['Id'];
+	$model = user();
+	$model->obj["firstName"] = $_POST["firstName"];
+	$model->obj["lastName"] = $_POST["lastName"];
+	$model->obj["username"] = $_POST["username"];
+	$model->obj["password"] = $_POST["password"];
+	$model->obj["role"] = $_POST["role"];
+	$model->create();
+
+
+header('Location: user.php?role='. $role);
+}
+
+function edit_user()
+{
+	$role = $_GET["role"];
+  $Id = $_GET["Id"];
+  $model = user();
+	$model->obj["firstName"] = $_POST["firstName"];
+	$model->obj["lastName"] = $_POST["lastName"];
+	$model->obj["username"] = $_POST["username"];
+	$model->obj["password"] = $_POST["password"];
+  $model->update("Id=$Id");
+
+header('Location: user.php?success=You just edited a user&role=' . $role);
+}
+
+>>>>>>> 2e494deb45289e0cd218b66e36fc86cf2c85e970:mb-admin/process.php
 function delete_user()
 {
 	$Id = $_GET["Id"];
@@ -119,6 +152,7 @@ function delete_user()
 function store_save()
 {
 
+<<<<<<< HEAD:mb/admin/process.php
 		$model = store();
   	$model->obj["storeCode"] = $_POST["storeCode"];
   	$model->obj["owner"] = $_POST["owner"];
@@ -128,6 +162,21 @@ function store_save()
   	$model->obj["address"] = $_POST["address"];
   	$model->obj["theme"] = $_POST["theme"];
   	$model->obj["email"] = $_POST["email"];
+=======
+	$model = store();
+	$image = uploadFile($_FILES["logo"]);
+	$model->obj["storeCode"] = $_POST["storeCode"];
+	$model->obj["owner"] = $_POST["owner"];
+	$model->obj["name"] = $_POST["name"];
+	$model->obj["phone"] = $_POST["phone"];
+	$model->obj["email"] = $_POST["email"];
+	$model->obj["address"] = $_POST["address"];
+	$model->obj["theme"] = $_POST["theme"];
+	$model->obj["email"] = $_POST["email"];
+	$model->obj["password"] = $_POST["password"];
+	$model->obj["logo"] = $image;
+	$model->create();
+>>>>>>> 2e494deb45289e0cd218b66e36fc86cf2c85e970:mb-admin/process.php
 
 		if ($_POST["form-type"] == "add") {
 			// Create directory
@@ -238,17 +287,17 @@ function item_delete()
 
 function view_store()
 {
-			$_SESSION["storeId"] = $_GET['Id'];
-			header('Location: category.php');
+	$_SESSION["storeId"] = $_GET['Id'];
+	header('Location: category.php');
 }
 
 function view_store_qr()
 {
-		$storeId = $_GET['Id'];
-		$_SESSION["user_session"] = array();
-		$_SESSION["user_session"]["role"] = $user->role;
-		$_SESSION["user_session"]["Id"] = $storeId;
-		header('Location: store-qr.php');
+	$storeId = $_GET['Id'];
+	$_SESSION["user_session"] = array();
+	$_SESSION["user_session"]["role"] = $user->role;
+	$_SESSION["user_session"]["Id"] = $storeId;
+	header('Location: store-qr.php');
 }
 
 
@@ -272,19 +321,34 @@ function delete_menu()
 }
 
 
+<<<<<<< HEAD:mb/admin/process.php
+=======
+	$storeId = $_GET["storeId"];
+	$model = menuCategory();
+	$image = uploadFile($_FILES["image"]);
+	$model->obj["storeId"] = $_POST["storeId"];
+	$model->obj["name"] = $_POST["name"];
+	$model->obj["description"] = $_POST["description"];
+	$model->obj["image"] = $image;
+	$model->create();
+
+
+header('Location: category.php?Id=' . $storeId );
+}
+>>>>>>> 2e494deb45289e0cd218b66e36fc86cf2c85e970:mb-admin/process.php
 
 function add_menu()
 {
 
-		$Id = $_GET["Id"];
-		$model = menuItem();
-		$image = uploadFile($_FILES["image"]);
-  	$model->obj["menuCategoryId"] = $_POST["menuCategoryId"];
-  	$model->obj["name"] = $_POST["name"];
-  	$model->obj["description"] = $_POST["description"];
-		$model->obj["image"] = $image;
-		$model->obj["price"] = $_POST["price"];
-		$model->create();
+	$Id = $_GET["Id"];
+	$model = menuItem();
+	$image = uploadFile($_FILES["image"]);
+	$model->obj["menuCategoryId"] = $_POST["menuCategoryId"];
+	$model->obj["name"] = $_POST["name"];
+	$model->obj["description"] = $_POST["description"];
+	$model->obj["image"] = $image;
+	$model->obj["price"] = $_POST["price"];
+	$model->create();
 
 
 header('Location: menu-item.php?Id=' . $Id );
