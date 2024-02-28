@@ -50,23 +50,58 @@ function send_message($number,$message){
 		return curl_exec ($ch);
 		curl_close ($ch);
 }
-/* =====================================Functions===================================== */
-/* Retrieve one record */
-function uploadFile($uploadedFile, $dir){
-	// Where the file is going to be placed
+
+function uploadFile($uploadedImage, $dir){
+	$maxDim = 300;
+	$tempName = $uploadedImage['tmp_name'];
 	$target_path = "../media/" . $dir . "/";
-	/* Add the original filename to our target path.
-	Result is "uploads/filename.extension" */
-	// $target_path = $target_path . basename( $uploadedFile['name']);
-	$temp = explode(".", $uploadedFile["name"]);
-	$newfilename = round(microtime(true)) . $uploadedFile["name"];
-	if(move_uploaded_file($uploadedFile['tmp_name'], $target_path . $newfilename)) {
+
+	// Start Resizing
+	list($width, $height, $type, $attr) = getimagesize( $tempName );
+	if ( $width > $maxDim || $height > $maxDim ) {
+			$target_filename = $tempName;
+			$ratio = $width/$height;
+			if( $ratio < 1) {
+					$new_width = $maxDim;
+					$new_height = $maxDim/$ratio;
+			} else {
+					$new_width = $maxDim*$ratio;
+					$new_height = $maxDim;
+			}
+			$src = imagecreatefromstring( file_get_contents( $tempName ) );
+			$dst = imagecreatetruecolor( $new_width, $new_height );
+			imagecopyresampled( $dst, $src, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
+			imagedestroy( $src );
+			imagepng( $dst, $target_filename ); // adjust format as needed
+			imagedestroy( $dst );
+	// End Resizing
+	}
+
+	$newfilename = round(microtime(true)) . ".png";
+	if(move_uploaded_file($tempName, $target_path . $newfilename)) {
 			return $dir ."/". $newfilename;
 		}
 		else{
 			return 0;
 		}
 }
+/* =====================================Functions===================================== */
+/* Retrieve one record */
+// function uploadFile($uploadedFile, $dir){
+// 	// Where the file is going to be placed
+// 	$target_path = "../media/" . $dir . "/";
+// 	/* Add the original filename to our target path.
+// 	Result is "uploads/filename.extension" */
+// 	// $target_path = $target_path . basename( $uploadedFile['name']);
+// 	$temp = explode(".", $uploadedFile["name"]);
+// 	$newfilename = round(microtime(true)) . $uploadedFile["name"];
+// 	if(move_uploaded_file($uploadedFile['tmp_name'], $target_path . $newfilename)) {
+// 			return $dir ."/". $newfilename;
+// 		}
+// 		else{
+// 			return 0;
+// 		}
+// }
 
 // function uploadFile($uploadedFile){
 // 	// Where the file is going to be placed

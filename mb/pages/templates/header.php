@@ -11,7 +11,7 @@ include_once("../config/Models.php");
 
 if (isset($_SESSION["store"])) {
   $storeName = $_SESSION["store"];
-  $store = store()->get("name='$storeName'");
+  $store = store()->get("storeCode='$storeName'");
 
   $category_list = menuCategory()->list("storeId=$store->Id");
 }
