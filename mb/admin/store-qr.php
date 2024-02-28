@@ -8,7 +8,7 @@
 <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 
 
-<div class="card mt-5" style="width: 50%; margin-left: 200px;">
+<div class="card" style="width: 50%; margin-left: 200px;">
     <div class="card card-header bg-dark text-white text-center">
       PLEASE SCAN TO SEE THE MENU
     </div>
@@ -51,4 +51,3 @@
   	correctLevel : QRCode.CorrectLevel.H
   });
   </script>
-<?php include $ROOT_DIR . "mb-templates/footer.php"; ?>

@@ -11,6 +11,11 @@ switch ($action) {
 			store_save();
 			break;
 
+		case 'user-save' :
+			user_save();
+			break;
+
+
 		case 'category-save' :
 			category_save();
 			break;
@@ -76,6 +81,11 @@ switch ($action) {
 			edit_store();
 			break;
 
+		case 'log-out' :
+			log_out();
+			break;
+
+
 	default :
 }
 function log_in()
@@ -92,48 +102,17 @@ else {
 			$_SESSION["user_session"]["role"] = $user->role;
 			$_SESSION["user_session"]["firstName"] = $user->firstName;
 
-		header('Location: dashboard.php?success=Welcome, '. $user->firstName);
+		header('Location: index.php?success=Welcome, '. $user->firstName);
 }
-}
-
-function add_user()
-{
-
-		$role = $_GET['Id'];
-		$model = user();
-  	$model->obj["firstName"] = $_POST["firstName"];
-  	$model->obj["lastName"] = $_POST["lastName"];
-  	$model->obj["username"] = $_POST["username"];
-  	$model->obj["password"] = $_POST["password"];
-  	$model->obj["role"] = $_POST["role"];
-  	$model->create();
-
-
-header('Location: user.php?role='. $role);
-}
-
-function edit_user()
-{
-	$role = $_GET["role"];
-  $Id = $_GET["Id"];
-  $model = user();
-	$model->obj["firstName"] = $_POST["firstName"];
-	$model->obj["lastName"] = $_POST["lastName"];
-	$model->obj["username"] = $_POST["username"];
-	$model->obj["password"] = $_POST["password"];
-  $model->update("Id=$Id");
-
-header('Location: user.php?success=You just edited a user&role=' . $role);
 }
 
 function delete_user()
 {
 	$Id = $_GET["Id"];
-  $role = $_GET["role"];
   $model = user();
 	$model->delete("Id=$Id");
 
-	header('Location: user.php?success=You just deleted a user&role='. $role);
+	header('Location: user.php?success=You just deleted a user');
 
 }
 
@@ -205,11 +184,8 @@ function category_save()
 			$model->update("Id=$Id");
 		}
 
-
 header('Location: category.php' );
 }
-
-
 
 function item_save()
 {
@@ -252,7 +228,6 @@ function item_delete()
 	$Id = $_GET["Id"];
 	$item = menuItem()->get("Id=$Id");
 	$catId = $item->menuCategoryId;
-		// Delete item
 	unlink('../media/' . $item->image);
   $model = menuItem();
 	$model->delete("Id=$Id");
@@ -319,7 +294,6 @@ function category_delete()
 {
 	$Id = $_GET["Id"];
 	$item = menuCategory()->get("Id=$Id");
-		// Delete item
 	unlink('../media/' . $item->image);
   $model = menuCategory();
 	$model->delete("Id=$Id");
@@ -345,27 +319,29 @@ function edit_menu()
 header('Location: menu-item.php?Id=' . $categoryId);
 }
 
-function edit_store()
+function user_save()
 {
 
-	$Id = $_GET["Id"];
-	$model = store();
-	$model->obj["storeCode"] = $_POST["storeCode"];
-	$model->obj["name"] = $_POST["name"];
-	$model->obj["owner"] = $_POST["owner"];
-	$model->obj["phone"] = $_POST["phone"];
-	$model->obj["address"] = $_POST["address"];
-	$model->obj["email"] = $_POST["email"];
-	$model->obj["theme"] = $_POST["theme"];
-	$model->obj["password"] = $_POST["password"];
+		$model = user();
+  	$model->obj["firstName"] = $_POST["firstName"];
+  	$model->obj["lastName"] = $_POST["lastName"];
+  	$model->obj["username"] = $_POST["username"];
+  	$model->obj["password"] = $_POST["password"];
 
-	if ($_FILES["logo"]["name"]!="") {
-		$image = uploadFile($_FILES["logo"]);
-		$model->obj["logo"] = $image;
+		if ($_POST["form-type"] == "add") {
+	  	$model->obj["role"] = $_POST["role"];
+			$model->create();
 		}
 
+		if ($_POST["form-type"] == "edit") {
+			$Id = $_POST["Id"];
+			$model->update("Id=$Id");
+		}
+header('Location: user.php');
+}
 
-		$model->update("Id=$Id");
-
-header('Location: store.php');
+function log_out()
+{
+	session_destroy();
+	header('Location: log-in.php');
 }
