@@ -4,7 +4,7 @@
   ?>
   <div class="card text-center mt-5" style="width:30%;">
   <div class="card-header text-white bg-dark ">
-    <h2>WORKWISE</h2>
+    <h2>MENUBOOK</h2>
   </div>
   <div class="card-body text-center">
     <form action="process.php?action=log-in" method="post">
@@ -22,19 +22,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php include $ROOT_DIR . "templates/footer.php"; ?>
+<?php include $ROOT_DIR . "../templates/footer.php"; ?>

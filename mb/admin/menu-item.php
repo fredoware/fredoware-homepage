@@ -101,6 +101,7 @@ $(function () {
 
       $("#formItemModal #btn-add").show();
       $("#formItemModal #btn-edit").hide();
+      $(".form-control").val('');
       $("#formItemModal").modal("show");
     });
 
@@ -132,3 +133,7 @@ $(function () {
   });
 
 </script>
+
+
+
+<?php include $ROOT_DIR . "templates/footer.php"; ?>

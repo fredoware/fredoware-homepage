@@ -97,6 +97,7 @@ $(function () {
 
       $("#formItemModal #btn-add").show();
       $("#formItemModal #btn-edit").hide();
+      $(".form-control").val('');
       $("#formItemModal").modal("show");
     });
 
