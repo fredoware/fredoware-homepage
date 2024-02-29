@@ -37,7 +37,9 @@
                 <div class="row">
                   <?php if ($item->image): ?>
                   <div class="col">
-                      <img src="../media/<?=$item->image;?>" width="100%" alt="">
+                    <div class="square-container">
+                      <img src="../media/<?=$item->image;?>">
+                    </div>
                   </div>
                 <?php endif; ?>
                   <div class="col">
@@ -59,7 +61,9 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <?php if ($item->image): ?>
-                  <img src="../media/<?=$item->image;?>" width="100%" alt="">
+                  <div class="square-container">
+                    <img src="../media/<?=$item->image;?>">
+                  </div>
                 <?php endif; ?>
                 <div class="modal-header">
                   <h1 class="modal-title fs-5"><?=$item->name;?></h1>

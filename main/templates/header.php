@@ -1,19 +1,19 @@
 <?php
 session_start();
-include_once($ROOT_DIR . "config/database.php");
-include_once($ROOT_DIR . "config/Models.php");
+include_once("config/database.php");
+include_once("config/Models.php");
 ?>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Fredoware Software Services</title>
+    <title>Fredoware Software Solutions</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="<?=$ROOT_DIR;?>templates/img/favicon.png" rel="icon">
+    <link href="templates/img/favicon.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,14 +25,14 @@ include_once($ROOT_DIR . "config/Models.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="<?=$ROOT_DIR;?>templates/source/animate.min.css" rel="stylesheet">
-    <link href="<?=$ROOT_DIR;?>templates/source/owl.carousel.min.css" rel="stylesheet">
+    <link href="templates/source/animate.min.css" rel="stylesheet">
+    <link href="templates/source/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="<?=$ROOT_DIR;?>templates/source/bootstrap.min.css" rel="stylesheet">
+    <link href="templates/source/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="<?=$ROOT_DIR;?>templates/source/style.css" rel="stylesheet">
+    <link href="templates/source/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -58,7 +58,7 @@ include_once($ROOT_DIR . "config/Models.php");
 
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="../" class="navbar-brand ms-4 ms-lg-0">
-                <img src="<?=$ROOT_DIR;?>templates/img/logo.png" id="main-logo" alt="">
+                <img src="templates/img/logo.png" id="main-logo" alt="">
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>

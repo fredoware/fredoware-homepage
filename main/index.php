@@ -1,7 +1,5 @@
 <?php
-  $ROOT_DIR="../";
-  include $ROOT_DIR . "templates/header.php";
-
+  include "templates/header.php";
 ?>
 
 <!-- Carousel Start -->
@@ -9,7 +7,7 @@
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="w-100" src="<?=$ROOT_DIR;?>templates/img/home.jpg" alt="Image">
+                <img class="w-100" src="templates/img/home.jpg" alt="Image">
                 <div class="carousel-caption">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -41,8 +39,8 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100 pt-5 pe-5" src="<?=$ROOT_DIR;?>templates/img/about-1.jpg" alt="" style="object-fit: cover;">
-                    <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="<?=$ROOT_DIR;?>templates/img/about-2.jpg" alt="" style="width: 200px; height: 200px;">
+                    <img class="position-absolute w-100 h-100 pt-5 pe-5" src="templates/img/about-1.jpg" alt="" style="object-fit: cover;">
+                    <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="templates/img/about-2.jpg" alt="" style="width: 200px; height: 200px;">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -222,7 +220,7 @@
   <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
           <div class="carousel-item active">
-              <img class="w-100" src="<?=$ROOT_DIR;?>templates/img/web.jpg" alt="Image">
+              <img class="w-100" src="templates/img/web.jpg" alt="Image">
               <div class="carousel-caption">
                   <div class="container">
                       <div class="row">
@@ -253,7 +251,7 @@
   <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
           <div class="carousel-item active">
-              <img class="w-100" src="<?=$ROOT_DIR;?>templates/img/web.jpg" alt="Image">
+              <img class="w-100" src="templates/img/web.jpg" alt="Image">
               <div class="carousel-caption">
                   <div class="container">
                       <div class="row">
@@ -283,7 +281,7 @@
   <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
           <div class="carousel-item active">
-              <img class="w-100" src="<?=$ROOT_DIR;?>templates/img/web.jpg" alt="Image">
+              <img class="w-100" src="templates/img/web.jpg" alt="Image">
               <div class="carousel-caption">
                   <div class="container">
                       <div class="row">
@@ -360,4 +358,4 @@
 <!-- Contact us End -->
 
 
-<?php include $ROOT_DIR . "templates/footer.php"; ?>
+<?php include "templates/footer.php"; ?>

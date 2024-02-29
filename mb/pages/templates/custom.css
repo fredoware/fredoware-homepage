@@ -43,3 +43,18 @@
   color: red;
   font-weight: bold;
 }
+
+.square-container {
+  position: relative;
+  width: 100%; /* Set container width to 100% */
+  overflow: hidden; /* Hide overflow content */
+  padding-top: 100%; /* Maintain 1:1 aspect ratio */
+}
+
+.square-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Fill the container */
+  height: auto; /* Maintain aspect ratio */
+}

@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://fredoware.com">Fredoware Software Services</a>
+                        Designed By <a href="https://fredoware.com">Fredoware Software Solutions</a>
                     </div>
                 </div>
             </div>
@@ -54,14 +54,14 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?=$ROOT_DIR;?>templates/source/wow.min.js"></script>
-    <script src="<?=$ROOT_DIR;?>templates/source/easing.min.js"></script>
-    <script src="<?=$ROOT_DIR;?>templates/source/waypoints.min.js"></script>
-    <script src="<?=$ROOT_DIR;?>templates/source/owl.carousel.min.js"></script>
-    <script src="<?=$ROOT_DIR;?>templates/source/parallax.min.js"></script>
+    <script src="templates/source/wow.min.js"></script>
+    <script src="templates/source/easing.min.js"></script>
+    <script src="templates/source/waypoints.min.js"></script>
+    <script src="templates/source/owl.carousel.min.js"></script>
+    <script src="templates/source/parallax.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="<?=$ROOT_DIR;?>templates/source/main.js"></script>
+    <script src="templates/source/main.js"></script>
 </body>
 
 </html>

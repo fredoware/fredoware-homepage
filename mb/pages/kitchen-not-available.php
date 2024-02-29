@@ -23,7 +23,9 @@
                                      <div class="row">
                                        <?php if ($item->image): ?>
                                        <div class="col">
-                                           <img src="../media/<?=$item->image;?>" width="100%" alt="">
+                                         <div class="square-container">
+                                           <img src="../media/<?=$item->image;?>">
+                                         </div>
                                        </div>
                                      <?php endif; ?>
                                      <div class="col">
