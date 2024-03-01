@@ -26,7 +26,8 @@
         <h2>Notification</h2>
       </div>
 
-      <h1 class="text-center">Stay here to receive notification</h1>
+      <button type="button" id="activateButton" class="btn btn-primary text-center" onclick="activateNotif()">Click to Activate Receiver</button>
+      <h1 class="text-center" id="receiver" style="display:none">Stay here to receive notification</h1>
 
       <div class="alert alert-danger" role="alert" id="alertBar" style="display:none;" onclick="location.href='kitchen-orders.php?status=Pending'">
           <span id="totalPending">0</span> new pending orders!
@@ -39,24 +40,35 @@
  <script type="text/javascript">
  var currentPending = 0;
 
- var intervalId = window.setInterval(function(){
-   $.ajax({
-       type: "GET",
-       url: "api-pending-orders.php?storeName=<?=$storeName?>",
-       success: function(data){
-         const obj = JSON.parse(data);
-         if (currentPending!=obj.totalPending) {
-           document.getElementById("alertBar").style.display = "";
-           document.getElementById("totalPending").innerHTML = obj.totalPending;
-           currentPending = obj.totalPending;
+ function activateNotif(){
 
-           // Play sound
-           const audio = new Audio("../templates/audio/notification.mp3");
-           audio.play();
-         }
-       }
-     });
- }, 5000);
+     document.getElementById("activateButton").style.display = "none";
+     document.getElementById("receiver").style.display = "";
+
+     var intervalId = window.setInterval(function(){
+       $.ajax({
+           type: "GET",
+           url: "api-pending-orders.php?storeName=<?=$storeName?>",
+           success: function(data){
+             const obj = JSON.parse(data);
+             if (currentPending!=obj.totalPending) {
+               document.getElementById("alertBar").style.display = "";
+               document.getElementById("totalPending").innerHTML = obj.totalPending;
+               currentPending = obj.totalPending;
+
+               notificationSound();
+             }
+           }
+         });
+     }, 5000);
+ }
+
+
+
+ function notificationSound(){
+   const audio = new Audio("templates/audio/notification.mp3");
+   audio.play();
+ }
 
  </script>
 
