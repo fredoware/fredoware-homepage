@@ -6,8 +6,9 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>QR Menu</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+
+  <meta property="og:title" content="QR Menu" />
+  <meta property="og:image" content="pages/templates/source/img/open-graph.jpg" />
 
   <!-- Favicons -->
   <link href="pages/templates/source/img/favicon.png" rel="icon">
