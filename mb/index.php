@@ -8,7 +8,7 @@
   <title>QR Menu</title>
 
   <meta property="og:title" content="QR Menu" />
-  <meta property="og:image" content="https://qr-menu.fredoware.com/pages/templates/source/img/open-graph.jpg" />
+  <meta property="og:image" content="https://qr-menu.fredoware.com/pages/templates/source/img/open-graph2.jpg" />
 
   <!-- Favicons -->
   <link href="pages/templates/source/img/favicon.png" rel="icon">
