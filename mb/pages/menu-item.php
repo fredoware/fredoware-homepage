@@ -34,23 +34,20 @@
 
 
           ?>
-          <div class="col-lg-4 menu-item" style="margin-bottom:-30px" data-bs-toggle="modal" data-bs-target="#itemModal<?=$item->Id?>">
+          <div class="col-lg-4 col-6 menu-item" style="margin-bottom:-30px" data-bs-toggle="modal" data-bs-target="#itemModal<?=$item->Id?>">
 
             <div class="card">
-              <div class="card-body">
-                <div class="row">
+              <div class="card-header">
                   <?php if ($item->image): ?>
-                  <div class="col">
                     <div class="square-container">
                       <img src="../media/<?=$item->image;?>">
                     </div>
-                  </div>
-                <?php endif; ?>
-                  <div class="col">
+                  <?php endif; ?>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col text-center">
                     <div class="item-name"><?=$item->name;?></div>
-                    <p class="item-description">
-                      <?=$item->description;?>
-                    </p>
                     <p class="item-price">
                       <?=format_money($item->price);?>
                     </p>

@@ -30,7 +30,7 @@
 }
 
 .item-name{
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .item-price{
-  font-size: 20px;
+  font-size: 16px;
   color: red;
   font-weight: bold;
 }
