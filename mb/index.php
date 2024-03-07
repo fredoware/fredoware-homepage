@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>QR Menu</title>
+  <title>Menully - Digital QR Menu</title>
 
   <meta property="og:title" content="QR Menu" />
   <meta property="og:image" content="https://qr-menu.fredoware.com/pages/templates/source/img/open-graph2.jpg" />
@@ -45,7 +45,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <a href="index.php" class="logo d-flex align-items-center me-auto me-lg-0">
-        <h1>Qr Menu<span>.</span></h1>
+        <h1>Menully<span>,</span></h1>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -58,7 +58,6 @@
         </ul>
       </nav><!-- .navbar -->
 
-      <a class="btn-book-a-table" href="#book-a-table">Create QR Menu</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
@@ -70,12 +69,12 @@
     <div class="container">
       <div class="row justify-content-between gy-5">
         <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-          <h2 data-aos="fade-up">QR Code<br>Digital Menu Book</h2>
+          <h2 data-aos="fade-up">Menully,<br>Digital QR Menu</h2>
           <p data-aos="fade-up" data-aos-delay="100">
             Say goodbye to outdated and PDF menus. Upgrade to the world's first QR digital menu. Generate unlimited QR codes. Exhibit the specific price associated with different seating options. Showcase your best-selling product and special offers/combos at the top of the menu.
           </p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#book-a-table" class="btn-book-a-table">Create QR Menu</a>
+            <a href="pages/store-sign-up.php" class="btn-book-a-table">Create QR Menu</a>
           </div>
         </div>
         <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
@@ -92,7 +91,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-            <p>Digital QR code menu</p>
+            <p>Menully, Digital QR Menu</p>
         </div>
 
         <div class="row">
@@ -123,7 +122,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <p>Digital QR code menu <span>benefits</span></p>
+          <p>Menully, Digital QR Menu <span>benefits</span></p>
         </div>
 
         <div class="row gy-4">
@@ -180,7 +179,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <p>QR Code Menu <span>Service Price</span></p>
+          <p>Menully, Digital QR Menu <span>Service Price</span></p>
         </div>
 
         <div class="row gy-4">
@@ -198,7 +197,7 @@
                 <div style="background:red;color:white" class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <h4>If Paid Every 6 Months </h4>
                   <h1>₱250</h1>
-                  <p>Charged every 6 months. <br> Total amount is ₱1,500</p>
+                  <p style="color:white">Charged every 6 months. <br> Total amount is ₱1,500</p>
                 </div>
               </div>
 
@@ -215,7 +214,7 @@
                   <h4>Free QR code menu for a month</h4>
                   <p>You can try our QR code menu service first, and then decide does it suits you or not. It's free and we do not ask for your credit card details.</p>
 
-                    <a href="#" class="btn btn-primary">Try it for free</a>
+                    <a href="pages/store-sign-up.php" class="btn btn-primary">Try it for free</a>
                 </div>
               </div>
 
@@ -233,71 +232,87 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <p>QR code menu <span>service includes</span></p>
+          <p>Menully, Digital QR Menu <span>service includes</span></p>
         </div>
 
         <div class="row gy-5" style="margin:30px;">
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             An access to your menu by the link (for social networks, your website or google maps)
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             An access to your menu by QR code (for placement on tables, windows, showcases, doors etc.)
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             QR code menu with unlimited amount of categories and items
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             Both a mobile and a desktop version of the menu
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             Unlimited amount of viewings for your menu
           </div>
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             An ability to remotely edit your menu
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             An ability to add employees to manage your menu
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             An ability to add several places into your profile, to easily manage a chain of restaurants
           </div>
 
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             An ability to hide menu positions with one click
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             "Temporary unavailable" feature
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             "Old price/New Price" feature
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             An ability to create a multi language QR code menu
           </div>
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             Unlimited photos and description loading for your QR code menu
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             Additional restaurant information feature (Address, Phone number, Map, Wi-Fi password)
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             QR code generator for your menu
           </div>
 
           <div class="col-lg-6">
+            <i class="bi bi-balloon-fill"></i>
             Unlimited number of QR code scans
           </div>
         </div>
@@ -313,7 +328,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Qr Menu</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Menully, Digital QR Menu</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         Designed by <a href="https://fredoware.com/" target="_blank">Fredoware Software Solutions</a>
