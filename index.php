@@ -1,3 +1,3 @@
 <?php
-  header("Location: main/");
+  header("Location: web/");
 ?>
