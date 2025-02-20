@@ -27,9 +27,12 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
 </head>
 
-<body class="index-page">
+<body class="index-page" ng-app="myApp" ng-controller="myCtrl">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -46,6 +49,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#faq">FAQ</a></li>
           
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -94,11 +99,11 @@
 
               <div class="customers-badge">
                 <div class="customer-avatars">
-                  <img src="assets/img/avatar-1.webp" alt="Customer 1" class="avatar">
-                  <img src="assets/img/avatar-2.webp" alt="Customer 2" class="avatar">
-                  <img src="assets/img/avatar-3.webp" alt="Customer 3" class="avatar">
-                  <img src="assets/img/avatar-4.webp" alt="Customer 4" class="avatar">
-                  <img src="assets/img/avatar-5.webp" alt="Customer 5" class="avatar">
+                  <img src="assets/img/client-1.jpg" alt="Customer 1" class="avatar">
+                  <img src="assets/img/client-2.jpg" alt="Customer 1" class="avatar">
+                  <img src="assets/img/client-3.jpg" alt="Customer 1" class="avatar">
+                  <img src="assets/img/client-4.jpg" alt="Customer 1" class="avatar">
+                  <img src="assets/img/client-5.jpg" alt="Customer 1" class="avatar">
                   <span class="avatar more">12+</span>
                 </div>
                 <p class="mb-0 mt-2">Join our growing list of satisfied clients</p>
@@ -332,46 +337,7 @@
 </section><!-- /Features Section -->
 
 
-    <!-- Features Cards Section -->
-    <section id="features-cards" class="features-cards section">
-      <div class="container">
-        <div class="row gy-4">
-    
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="feature-box orange">
-              <i class="bi bi-speedometer2"></i>
-              <h4>Fast & Optimized</h4>
-              <p>Our solutions are built for speed, ensuring smooth performance and optimal user experience.</p>
-            </div>
-          </div><!-- End Feature Box -->
-    
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="feature-box blue">
-              <i class="bi bi-lock"></i>
-              <h4>Secure & Reliable</h4>
-              <p>We implement strong security measures to keep your data safe and protect against vulnerabilities.</p>
-            </div>
-          </div><!-- End Feature Box -->
-    
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="feature-box green">
-              <i class="bi bi-layers"></i>
-              <h4>Scalable Architecture</h4>
-              <p>Designed to grow with your business, our system supports easy expansion and future updates.</p>
-            </div>
-          </div><!-- End Feature Box -->
-    
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="feature-box red">
-              <i class="bi bi-gear-wide-connected"></i>
-              <h4>Integration Ready</h4>
-              <p>Seamlessly integrates with third-party apps and services to enhance your workflow and automation.</p>
-            </div>
-          </div><!-- End Feature Box -->
-    
-        </div>
-      </div>
-    </section><!-- /Features Cards Section -->
+
 
 
     <!-- Call To Action Section -->
@@ -534,14 +500,103 @@
 
     </section><!-- /Services Section -->
 
-    <!-- Faq Section -->
+
+     <!-- Products Section -->
+     <section id="products" class="features-cards section">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Products</h2>
+          <p>Innovative Digital Solutions for Your Business</p>
+        </div><!-- End Section Title -->
+        
+        <div class="row gy-4">
+    
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-box orange">
+              <i class="bi bi-clock"></i>
+              <h4>Time Sheet Tracking System</h4>
+              <p>Track employee hours, manage attendance, and streamline payroll integration with ease.</p>
+            </div>
+          </div><!-- End Product Box -->
+    
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-box blue">
+              <i class="bi bi-mortarboard"></i>
+              <h4>Learning Management System</h4>
+              <p>Manage online courses, track student progress, and facilitate seamless learning experiences.</p>
+            </div>
+          </div><!-- End Product Box -->
+    
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-box green">
+              <i class="bi bi-graph-up"></i>
+              <h4>AI Trading - Foreign Exchange</h4>
+              <p>Automate forex trading with AI-powered analysis, market insights, and risk management tools.</p>
+            </div>
+          </div><!-- End Product Box -->
+    
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="feature-box red">
+              <i class="bi bi-person-badge"></i>
+              <h4>Neuro-Psychological Evaluation System</h4>
+              <p>Conduct cognitive assessments, generate reports, and analyze psychological data securely.</p>
+            </div>
+          </div><!-- End Product Box -->
+    
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+            <div class="feature-box orange">
+              <i class="bi bi-shop"></i>
+              <h4>Point of Sale (POS) System</h4>
+              <p>Process sales transactions, manage inventory, and streamline customer purchases.</p>
+            </div>
+          </div><!-- End Product Box -->
+    
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+            <div class="feature-box blue">
+              <i class="bi bi-box-seam"></i>
+              <h4>Inventory Management System</h4>
+              <p>Track stock levels, automate restocking, and manage supplier relations efficiently.</p>
+            </div>
+          </div><!-- End Product Box -->
+    
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
+            <div class="feature-box green">
+              <i class="bi bi-cart"></i>
+              <h4>E-Commerce Platform</h4>
+              <p>Create and manage your online store with secure payments and real-time inventory tracking.</p>
+            </div>
+          </div><!-- End Product Box -->
+    
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="800">
+            <div class="feature-box red">
+              <i class="bi bi-truck"></i>
+              <h4>Delivery Management System</h4>
+              <p>Optimize deliveries, track drivers in real-time, and automate logistics processes.</p>
+            </div>
+          </div><!-- End Product Box -->
+    
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="900">
+            <div class="feature-box orange">
+              <i class="bi bi-qr-code"></i>
+              <h4>Digital QR Menu</h4>
+              <p>Provide a contactless dining experience with a QR-based digital menu for easy ordering.</p>
+            </div>
+          </div><!-- End Product Box -->
+    
+        </div>
+      </div>
+    </section><!-- /Products Section -->
+
+
+    <!-- FAQ Section -->
     <section class="faq-9 faq section light-background" id="faq">
       <div class="container">
         <div class="row">
     
           <div class="col-lg-5" data-aos="fade-up">
-            <h2 class="faq-title">Have a Question? Check Out Our FAQs</h2>
-            <p class="faq-description">Find answers to the most common questions about our services, features, and how we can help you.</p>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-description">Find answers to common questions about our business solutions, features, and how they can help streamline your operations.</p>
             <div class="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
               <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M198.804 194.488C189.279 189.596 179.529 185.52..." fill="currentColor"></path>
@@ -553,49 +608,81 @@
             <div class="faq-container">
     
               <div class="faq-item faq-active">
-                <h3>What is this service about?</h3>
+                <h3>What products do you offer?</h3>
                 <div class="faq-content">
-                  <p>We provide a platform that helps you manage your business efficiently with tools for automation, scheduling, and seamless integration.</p>
+                  <p>We provide solutions including Time Sheet Tracking, Learning Management, AI Trading, Neuro-Psychological Evaluation, POS, Inventory Management, E-Commerce, Delivery Services, and Digital QR Menus.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End FAQ item -->
     
               <div class="faq-item">
-                <h3>How do I get started?</h3>
+                <h3>How can I purchase or subscribe?</h3>
                 <div class="faq-content">
-                  <p>Simply sign up on our website, choose a plan that suits your needs, and start using our features right away. No technical skills required!</p>
+                  <p>You can visit our website, select the product you need, and subscribe to a plan that suits your business. For enterprise solutions, contact us directly.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End FAQ item -->
     
               <div class="faq-item">
-                <h3>Is my data secure?</h3>
+                <h3>Are your systems cloud-based?</h3>
                 <div class="faq-content">
-                  <p>Yes! We use advanced encryption and security measures to ensure that your data remains safe and protected at all times.</p>
+                  <p>Yes! Our solutions are accessible anytime, anywhere with cloud hosting. We also provide on-premise deployment upon request.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End FAQ item -->
     
               <div class="faq-item">
-                <h3>Can I integrate this with other tools?</h3>
+                <h3>Is integration with other software possible?</h3>
                 <div class="faq-content">
-                  <p>Absolutely! Our system is designed to work seamlessly with third-party apps and services like payment gateways, CRMs, and more.</p>
+                  <p>Yes! Our products integrate seamlessly with payment gateways, accounting software, CRM tools, and third-party services.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End FAQ item -->
     
               <div class="faq-item">
-                <h3>What if I need support?</h3>
+                <h3>How secure is my data?</h3>
                 <div class="faq-content">
-                  <p>Our support team is available 24/7 to assist you. You can reach us via email, live chat, or phone for any issues or inquiries.</p>
+                  <p>We prioritize security with encrypted connections, regular backups, and compliance with industry standards.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End FAQ item -->
     
               <div class="faq-item">
-                <h3>Is there a free trial?</h3>
+                <h3>Do you offer customer support?</h3>
                 <div class="faq-content">
-                  <p>Yes! We offer a free trial so you can explore our features before committing to a paid plan. No credit card required.</p>
+                  <p>Yes! Our support team is available via email, chat, and phone. We also offer dedicated support for enterprise clients.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End FAQ item -->
+    
+              <div class="faq-item">
+                <h3>Can I customize the software to fit my needs?</h3>
+                <div class="faq-content">
+                  <p>Yes, we offer customization services to tailor our solutions based on your business requirements.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End FAQ item -->
+    
+              <div class="faq-item">
+                <h3>Do you offer training for new users?</h3>
+                <div class="faq-content">
+                  <p>Yes! We provide onboarding sessions and training materials to help you and your team get started quickly.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End FAQ item -->
+    
+              <div class="faq-item">
+                <h3>What payment methods do you accept?</h3>
+                <div class="faq-content">
+                  <p>We accept credit/debit cards, bank transfers, and digital payment methods depending on your location.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End FAQ item -->
+    
+              <div class="faq-item">
+                <h3>Is there a free trial available?</h3>
+                <div class="faq-content">
+                  <p>Yes! We offer a free trial so you can explore our features before committing to a paid plan.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End FAQ item -->
@@ -643,8 +730,11 @@
             <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
               <h3>Let's Connect</h3>
               <p>We’d love to hear from you! Send us a message, and we’ll get back to you as soon as possible.</p>
+
+              Please email us at <a
+              href="mailto:contactus@fredoware.com">contactus@fredoware.com</a>
     
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <!-- <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
     
                   <div class="col-md-6">
@@ -672,7 +762,7 @@
                   </div>
     
                 </div>
-              </form>
+              </form> -->
     
             </div>
           </div>
@@ -710,6 +800,16 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    var app = angular.module("myApp", []);
+    
+    app.controller('myCtrl', function($scope, $http) {
+      $scope.sample = "heller";
+
+
+    });
+    </script>
 
 </body>
 
