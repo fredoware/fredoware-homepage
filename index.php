@@ -6,7 +6,7 @@
   <meta name="keywords" content="">
   <meta property="og:title" content="Fredoware Software Solutions" />
   <meta property="og:url" content="https://fredoware.com" />
-  <meta property="og:image" content="assets/img/og.png" />
+  <meta property="og:image" content="https://fredoware.com/web/assets/img/og.png" />
   
 </head>
 <?php
